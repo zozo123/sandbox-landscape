@@ -48,11 +48,26 @@
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="#matrix">Use the matrix</a>
+            <a class="button secondary" href="#solutions">Compare links and costs</a>
             <a class="button secondary" href="#benchmarks">Benchmark rules</a>
             <a class="button secondary" href="https://www.linkedin.com/in/zozo123/" target="_blank" rel="noreferrer">
               Feedback on LinkedIn
             </a>
           </div>
+          <dl class="hero-stats" aria-label="Landscape coverage">
+            <div>
+              <dt>30+</dt>
+              <dd>public links</dd>
+            </div>
+            <div>
+              <dt>18</dt>
+              <dd>cost signals</dd>
+            </div>
+            <div>
+              <dt>0</dt>
+              <dd>private claims</dd>
+            </div>
+          </dl>
         </div>
 
         <div class="guarantee-map" aria-label="Execution guarantee map">
@@ -318,11 +333,29 @@
       <section class="section solution-band" id="solutions" aria-labelledby="solutions-title">
         <div class="section-heading wide">
           <p class="eyebrow">Official links</p>
-          <h2 id="solutions-title">Start from the public source for each solution.</h2>
+          <h2 id="solutions-title">Company links, solution pages, and public cost signals.</h2>
           <p>
-            These links point to public product pages, docs, or repositories. They are
-            starting points for research, not benchmark results.
+            Use this as a research starting point. Prices are public snapshots from
+            vendor pages and should be rechecked before buying or benchmarking.
           </p>
+        </div>
+
+        <div class="cost-rail" aria-label="Cost summary">
+          <article>
+            <span>Best for transparent metering</span>
+            <strong>Modal, Daytona, Runloop, Islo, Tensorlake</strong>
+            <p>Published CPU/RAM/storage rates make early workload modeling possible.</p>
+          </article>
+          <article>
+            <span>Best free starting points</span>
+            <strong>Harbor, TRL, Langfuse, ARC, public GitHub Actions</strong>
+            <p>Open-source tools still carry infrastructure, storage, and operations cost.</p>
+          </article>
+          <article>
+            <span>Cost caveat</span>
+            <strong>Enterprise features often move to sales-led pricing</strong>
+            <p>VPC, SSO, higher concurrency, compliance, and support usually change economics.</p>
+          </article>
         </div>
 
         <div class="solution-grid">
@@ -380,6 +413,133 @@
               <li><a href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">Kubernetes Agent Sandbox</a></li>
             </ul>
           </article>
+        </div>
+
+        <div class="pricing-wrap" aria-labelledby="pricing-title">
+          <div class="pricing-heading">
+            <p class="eyebrow">Cost index</p>
+            <h3 id="pricing-title">Public cost signals to verify before selection.</h3>
+          </div>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th scope="col">Solution</th>
+                <th scope="col">Company / project</th>
+                <th scope="col">Public cost signal</th>
+                <th scope="col">Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>E2B sandboxes</td>
+                <td>E2B</td>
+                <td>Hobby free + usage; Pro $150/mo + usage; CPU and RAM metered per second.</td>
+                <td><a href="https://e2b.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://e2b.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Modal Sandboxes</td>
+                <td>Modal</td>
+                <td>Starter $0 + compute; Team $250/mo + compute; sandbox CPU/RAM billed per second.</td>
+                <td><a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Solution</a> <a href="https://modal.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>AI sandboxes</td>
+                <td>Daytona</td>
+                <td>$200 free compute; vCPU, memory, storage, and GPU billed by time used.</td>
+                <td><a href="https://www.daytona.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.daytona.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Devboxes</td>
+                <td>Runloop</td>
+                <td>Basic free + usage; Pro $250/mo + usage; devbox CPU/RAM/storage billed separately.</td>
+                <td><a href="https://www.runloop.ai/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.runloop.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Long-running AI sandboxes</td>
+                <td>Islo</td>
+                <td>$50 free credits; CPU, memory, and storage billed per provisioned hour.</td>
+                <td><a href="https://islo.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://islo.dev/" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Stateful microVM sandboxes</td>
+                <td>Tensorlake</td>
+                <td>Free tier; On-Demand $0 base + usage; Pro $250/mo + discounted usage.</td>
+                <td><a href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.tensorlake.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Docker Sandboxes</td>
+                <td>Docker</td>
+                <td>AI sandbox docs are public; pricing depends on Docker plan and feature availability.</td>
+                <td><a href="https://docs.docker.com/ai/sandboxes/" target="_blank" rel="noreferrer">Solution</a> <a href="https://www.docker.com/pricing/" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>GitHub-hosted runners</td>
+                <td>GitHub</td>
+                <td>Public repos use standard runners free; private usage has included quota and per-minute rates.</td>
+                <td><a href="https://github.com/features/actions" target="_blank" rel="noreferrer">Solution</a> <a href="https://docs.github.com/en/billing/reference/actions-minute-multipliers" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Actions Runner Controller</td>
+                <td>GitHub / Kubernetes</td>
+                <td>Controller is open source; pay for Kubernetes/cloud infrastructure and Actions billing where applicable.</td>
+                <td><a href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">Docs</a> <a href="https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions" target="_blank" rel="noreferrer">Billing</a></td>
+              </tr>
+              <tr>
+                <td>Harbor eval framework</td>
+                <td>Harbor</td>
+                <td>Open source; runtime cost comes from selected execution backend and model calls.</td>
+                <td><a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Repo</a></td>
+              </tr>
+              <tr>
+                <td>Temporal</td>
+                <td>Temporal</td>
+                <td>Self-host or Temporal Cloud; pricing is usage and namespace dependent.</td>
+                <td><a href="https://temporal.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://temporal.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Braintrust</td>
+                <td>Braintrust</td>
+                <td>Starter free; Pro $249/mo; usage for processed data and scores.</td>
+                <td><a href="https://www.braintrust.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.braintrust.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>LangSmith</td>
+                <td>LangChain</td>
+                <td>Developer $0/seat; Plus $39/seat/mo; pay-as-you-go traces and deployment runs.</td>
+                <td><a href="https://www.langchain.com/langsmith" target="_blank" rel="noreferrer">Solution</a> <a href="https://www.langchain.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Langfuse</td>
+                <td>Langfuse</td>
+                <td>Hobby free; Core $29/mo; Pro $199/mo; units and retention drive cost.</td>
+                <td><a href="https://langfuse.com/" target="_blank" rel="noreferrer">Site</a> <a href="https://langfuse.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Trigger.dev</td>
+                <td>Trigger.dev</td>
+                <td>Cloud tiers and run/concurrency limits; open-source self-hosting shifts cost to infra.</td>
+                <td><a href="https://trigger.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://trigger.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Inngest</td>
+                <td>Inngest</td>
+                <td>Cloud pricing depends on plan, function runs, and event volume.</td>
+                <td><a href="https://www.inngest.com/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.inngest.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Prefect</td>
+                <td>Prefect</td>
+                <td>Open-source option plus managed cloud plans.</td>
+                <td><a href="https://www.prefect.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.prefect.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Dagster</td>
+                <td>Dagster</td>
+                <td>Open-source option plus Dagster+ cloud plans.</td>
+                <td><a href="https://dagster.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://dagster.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 

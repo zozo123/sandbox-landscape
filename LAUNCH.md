@@ -37,7 +37,7 @@ The framing here is that teams are not buying one sandbox. They are buying execu
 
 The repo is intentionally early and based on public information. I plan to update it gradually with reproducible benchmarks. For benchmark entries, the rule is to disclose public sources, prompt used, agent/model used, harness, raw logs/artifacts, environment, scoring rubric, and human edits.
 
-I also added official links for the tools mentioned, so corrections can point to public vendor pages or canonical repos rather than screenshots or private claims.
+I also added official links and public cost signals for the tools mentioned, so corrections can point to vendor pages, pricing pages, docs, or canonical repos rather than screenshots or private claims.
 
 I would especially value corrections, missing projects, and real-world experience from people running evals, agent CI, stateful coding agents, or RL rollout infrastructure.
 ```
@@ -59,6 +59,7 @@ Future benchmarks will disclose sources, prompts, agents/models used, harnesses,
 - `PROMPT.md` records the seed prompt and agent used.
 - `AGENTS.md` gives future agents a compact context brief.
 - Website includes official links for each mentioned solution.
+- Website includes public pricing/cost links for the major solutions.
 - LinkedIn contact URL is correct.
 - HN first comment is pasted after submission.
 

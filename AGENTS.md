@@ -57,6 +57,9 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
 - Keep the tone sober, technical, and useful for Hacker News readers.
 - Keep official solution links on the website pointed at public vendor pages,
   documentation, or canonical open-source repositories.
+- Keep cost signals conservative. Prefer linking to public pricing pages over
+  embedding fragile exact numbers. If exact numbers are shown, verify them
+  against public pricing pages and update the date-sensitive language.
 
 ## Files
 

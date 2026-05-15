@@ -67,7 +67,9 @@ See [BENCHMARKS.md](BENCHMARKS.md).
 
 ## Official Links
 
-The website includes an official-links section for the products, docs, and repositories mentioned in the matrix. Keep those links pointed at public vendor pages or canonical open-source repositories.
+The website includes official links and public cost signals for the products, docs, and repositories mentioned in the matrix. Keep those links pointed at public vendor pages, pricing pages, docs, or canonical open-source repositories.
+
+Cost notes are snapshots from public pricing pages. Recheck pricing before using the site for vendor selection or benchmarks.
 
 ## GitHub Pages
 
