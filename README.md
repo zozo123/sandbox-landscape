@@ -43,6 +43,8 @@ styles.css                 Site styling
 script.js                  Matrix filtering
 BENCHMARKS.md              Benchmark methodology and disclosure template
 PROMPT.md                  Prompt provenance and agent disclosure
+AGENTS.md                  Compact operating brief for future coding agents
+LAUNCH.md                  Hacker News copy and launch checklist
 .github/workflows/pages.yml GitHub Pages deployment workflow
 ```
 
@@ -79,31 +81,9 @@ Expected public URL after deployment:
 https://zozo123.github.io/sandbox-landscape/
 ```
 
-## Hacker News Draft
+## Hacker News Launch
 
-Title:
-
-```text
-AI Sandbox Landscape: choosing execution guarantees for agents, evals, CI, and RL
-```
-
-Text:
-
-```text
-I made a living public-info map of AI sandbox choices for agent evals, GitHub Actions, post-training/RL rollouts, long-running coding agents, auto-healing workflows, and production-adjacent automation.
-
-The main framing is that teams are not buying "a sandbox"; they are buying execution guarantees: state, scale, isolation, credential control, CI integration, orchestration, and evidence capture.
-
-The repo is intentionally early. I plan to update it gradually. Future benchmarks will be created from public information and reproducible experiments, and each benchmark should disclose the prompt, sources, agent/model used, harness, raw logs, and scoring rubric.
-
-Feedback and inclusion requests welcome, especially if you can point to public docs or reproducible behavior.
-```
-
-Submit link:
-
-```text
-https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fzozo123.github.io%2Fsandbox-landscape%2F&t=AI%20Sandbox%20Landscape%3A%20choosing%20execution%20guarantees%20for%20agents%2C%20evals%2C%20CI%2C%20and%20RL
-```
+The Hacker News title, submit link, first comment, and checklist live in [LAUNCH.md](LAUNCH.md).
 
 ## Feedback
 
