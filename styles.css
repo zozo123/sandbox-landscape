@@ -596,7 +596,7 @@ h3 {
 
 .solution-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
   gap: 16px;
   margin-top: 32px;
 }
@@ -608,6 +608,13 @@ h3 {
   border-radius: 18px;
   background: var(--panel);
   box-shadow: 0 16px 45px rgba(34, 39, 37, 0.055);
+}
+
+.solution-card-featured {
+  background:
+    linear-gradient(145deg, rgba(15, 118, 110, 0.09), rgba(255, 255, 255, 0.88)),
+    var(--panel);
+  border-color: rgba(15, 118, 110, 0.22);
 }
 
 .solution-card h3 {

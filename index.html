@@ -15,6 +15,7 @@
     >
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#f8f7f2">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -56,11 +57,11 @@
           </div>
           <dl class="hero-stats" aria-label="Landscape coverage">
             <div>
-              <dt>30+</dt>
+              <dt>40+</dt>
               <dd>public links</dd>
             </div>
             <div>
-              <dt>18</dt>
+              <dt>20</dt>
               <dd>cost signals</dd>
             </div>
             <div>
@@ -194,14 +195,14 @@
                 <td>No / medium</td>
                 <td>Medium</td>
                 <td>High</td>
-                <td>ARC + Docker Sandboxes / Daytona</td>
+                <td>ARC + Docker Sandboxes / Daytona / Crabbox</td>
               </tr>
               <tr data-tags="long coding agent daytona runloop islo">
                 <td>Long-running coding agent</td>
                 <td>Yes</td>
                 <td>Medium</td>
                 <td>High</td>
-                <td>Daytona / Runloop / Islo</td>
+                <td>Daytona / Runloop / Islo / exe.dev</td>
               </tr>
               <tr data-tags="enterprise unattended agent islo runloop docker">
                 <td>Enterprise unattended agent</td>
@@ -236,7 +237,7 @@
                 <td>Snapshot</td>
                 <td>Very high</td>
                 <td>Medium / high</td>
-                <td>Modal / Harbor / Daytona / Tensorlake</td>
+                <td>Modal / Harbor / Daytona / Tensorlake / Crabbox</td>
               </tr>
               <tr data-tags="long browser research e2b desktop daytona tensorlake">
                 <td>Browser / research agents</td>
@@ -282,17 +283,17 @@
           </div>
           <div class="arch-row highlight">
             <span>Router</span>
-            <strong>Sandbox broker selects backend by guarantees</strong>
+            <strong>Sandbox broker selects backend by guarantees: Crabbox, custom broker, or provider router</strong>
           </div>
           <div class="backend-grid">
             <article>
               <h3>Eval / RL</h3>
               <p>Harbor + Modal for benchmark harnesses, reward execution, and parallel rollouts.</p>
             </article>
-            <article>
-              <h3>Stateful work</h3>
-              <p>Daytona, Runloop, Islo, or Tensorlake for long-lived repo and browser tasks.</p>
-            </article>
+          <article>
+            <h3>Stateful work</h3>
+            <p>Daytona, Runloop, Islo, exe.dev, or Tensorlake for long-lived repo and browser tasks.</p>
+          </article>
             <article>
               <h3>CI safety</h3>
               <p>GitHub Actions ARC, Docker Sandboxes, and isolated runners for PR validation.</p>
@@ -343,13 +344,13 @@
         <div class="cost-rail" aria-label="Cost summary">
           <article>
             <span>Best for transparent metering</span>
-            <strong>Modal, Daytona, Runloop, Islo, Tensorlake</strong>
+            <strong>Modal, Daytona, Runloop, Islo, Tensorlake, exe.dev</strong>
             <p>Published CPU/RAM/storage rates make early workload modeling possible.</p>
           </article>
           <article>
-            <span>Best free starting points</span>
-            <strong>Harbor, TRL, Langfuse, ARC, public GitHub Actions</strong>
-            <p>Open-source tools still carry infrastructure, storage, and operations cost.</p>
+            <span>Best for provider routing</span>
+            <strong>Crabbox, ARC, custom brokers, provider routers</strong>
+            <p>Broker layers preserve a local loop while moving spend and credentials behind policy.</p>
           </article>
           <article>
             <span>Cost caveat</span>
@@ -365,6 +366,7 @@
               <li><a href="https://pydantic.dev/articles/pydantic-monty" target="_blank" rel="noreferrer">Monty</a></li>
               <li><a href="https://e2b.dev/" target="_blank" rel="noreferrer">E2B</a></li>
               <li><a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Modal Sandboxes</a></li>
+              <li><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox</a></li>
               <li><a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/code-execution-tool" target="_blank" rel="noreferrer">Anthropic Code Execution</a></li>
               <li><a href="https://platform.openai.com/docs/guides/tools-code-interpreter" target="_blank" rel="noreferrer">OpenAI Code Interpreter</a></li>
               <li><a href="https://ai.google.dev/gemini-api/docs/code-execution" target="_blank" rel="noreferrer">Gemini Code Execution</a></li>
@@ -413,6 +415,17 @@
               <li><a href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">Kubernetes Agent Sandbox</a></li>
             </ul>
           </article>
+
+          <article class="solution-card solution-card-featured">
+            <h3>Broker layer</h3>
+            <ul class="link-list">
+              <li><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox docs</a></li>
+              <li><a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Crabbox repo</a></li>
+              <li><a href="https://crabbox.sh/#how-it-fits-together" target="_blank" rel="noreferrer">Broker architecture</a></li>
+              <li><a href="https://crabbox.sh/#quick-start" target="_blank" rel="noreferrer">CLI quick start</a></li>
+              <li><a href="https://exe.dev/" target="_blank" rel="noreferrer">exe.dev</a></li>
+            </ul>
+          </article>
         </div>
 
         <div class="pricing-wrap" aria-labelledby="pricing-title">
@@ -430,6 +443,12 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>Remote testbox broker</td>
+                <td>Crabbox / OpenClaw</td>
+                <td>Open-source broker and CLI; cost comes from leased provider capacity, spend caps, warm boxes, and Cloudflare/infra operations.</td>
+                <td><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Docs</a> <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Repo</a></td>
+              </tr>
               <tr>
                 <td>E2B sandboxes</td>
                 <td>E2B</td>
@@ -465,6 +484,12 @@
                 <td>Tensorlake</td>
                 <td>Free tier; On-Demand $0 base + usage; Pro $250/mo + discounted usage.</td>
                 <td><a href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.tensorlake.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Persistent agent VMs</td>
+                <td>exe.dev</td>
+                <td>$20/month public VM plan; includes shared 2 CPU, 8 GB RAM, 25 GB disk across up to 50 VMs; production usage is sales-led.</td>
+                <td><a href="https://exe.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://exe.dev/#pricing" target="_blank" rel="noreferrer">Pricing</a></td>
               </tr>
               <tr>
                 <td>Docker Sandboxes</td>
