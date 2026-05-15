@@ -60,7 +60,7 @@ Future benchmarks will disclose sources, prompts, agents/models used, harnesses,
 - `AGENTS.md` gives future agents a compact context brief.
 - Website includes official links for each mentioned solution.
 - Website includes public pricing/cost links for the major solutions.
-- LinkedIn contact URL is correct.
+- LinkedIn contact URL is correct: https://www.linkedin.com/in/yossi-eliaz/
 - HN first comment is pasted after submission.
 
 ## Post-Launch Triage
