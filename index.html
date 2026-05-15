@@ -16,6 +16,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#f8f7f2">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -39,9 +40,15 @@
     </header>
 
     <main id="top">
+      <section class="launch-strip" aria-label="Site status">
+        <span>Public-info landscape</span>
+        <span>Official links and cost signals</span>
+        <span>Benchmark provenance required</span>
+      </section>
+
       <section class="hero section">
         <div class="hero-copy">
-          <p class="eyebrow">Living public-info baseline</p>
+          <p class="eyebrow">Living public-info atlas</p>
           <h1>Sandbox choices for AI agents, evals, CI, and RL rollouts.</h1>
           <p class="hero-lede">
             The useful question is not "which sandbox should I buy?" It is
@@ -71,28 +78,51 @@
           </dl>
         </div>
 
-        <div class="guarantee-map" aria-label="Execution guarantee map">
-          <div class="map-node map-node-main">
-            <strong>Workload</strong>
-            <span>execution guarantee needed</span>
+        <div class="atlas-panel" aria-label="Execution guarantee map">
+          <div class="atlas-topbar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>execution router</strong>
           </div>
-          <div class="map-grid">
-            <div class="map-node accent-teal">
-              <strong>State</strong>
-              <span>ephemeral, snapshot, persistent</span>
+          <div class="atlas-core">
+            <div class="router-card">
+              <span>Input</span>
+              <strong>Workload</strong>
+              <small>danger, duration, state, scale</small>
             </div>
-            <div class="map-node accent-amber">
-              <strong>Scale</strong>
-              <span>single task to rollout fleet</span>
+            <div class="router-card router-card-dark">
+              <span>Policy</span>
+              <strong>Guarantees</strong>
+              <small>isolation, network, secrets, evidence</small>
             </div>
-            <div class="map-node accent-rose">
-              <strong>Security</strong>
-              <span>network, secrets, isolation</span>
+            <div class="router-card">
+              <span>Output</span>
+              <strong>Backend</strong>
+              <small>ephemeral, persistent, brokered</small>
             </div>
-            <div class="map-node accent-green">
-              <strong>Evidence</strong>
-              <span>logs, diffs, artifacts, scores</span>
-            </div>
+          </div>
+          <div class="atlas-lanes">
+            <article>
+              <span>01</span>
+              <strong>Ephemeral</strong>
+              <p>E2B, Modal, code tools</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Stateful</strong>
+              <p>Daytona, Runloop, Islo, exe.dev</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Brokered</strong>
+              <p>Crabbox, ARC, custom routers</p>
+            </article>
+            <article>
+              <span>04</span>
+              <strong>Measured</strong>
+              <p>Harbor, traces, raw artifacts</p>
+            </article>
           </div>
         </div>
       </section>
@@ -290,10 +320,10 @@
               <h3>Eval / RL</h3>
               <p>Harbor + Modal for benchmark harnesses, reward execution, and parallel rollouts.</p>
             </article>
-          <article>
-            <h3>Stateful work</h3>
-            <p>Daytona, Runloop, Islo, exe.dev, or Tensorlake for long-lived repo and browser tasks.</p>
-          </article>
+            <article>
+              <h3>Stateful work</h3>
+              <p>Daytona, Runloop, Islo, exe.dev, or Tensorlake for long-lived repo and browser tasks.</p>
+            </article>
             <article>
               <h3>CI safety</h3>
               <p>GitHub Actions ARC, Docker Sandboxes, and isolated runners for PR validation.</p>
