@@ -99,6 +99,12 @@ The repo is intentionally early. I plan to update it gradually. Future benchmark
 Feedback and inclusion requests welcome, especially if you can point to public docs or reproducible behavior.
 ```
 
+Submit link:
+
+```text
+https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fzozo123.github.io%2Fsandbox-landscape%2F&t=AI%20Sandbox%20Landscape%3A%20choosing%20execution%20guarantees%20for%20agents%2C%20evals%2C%20CI%2C%20and%20RL
+```
+
 ## Feedback
 
 For corrections, additions, or to be considered for inclusion, reach out on LinkedIn:
