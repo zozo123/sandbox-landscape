@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <a class="skip-link" href="#matrix">Skip to decision matrix</a>
+    <a class="skip-link" href="#use-cases">Skip to use cases</a>
 
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
@@ -29,10 +29,8 @@
           <span>AI Sandbox Landscape</span>
         </a>
         <div class="nav-links">
-          <a href="#matrix">Matrix</a>
-          <a href="#router">Router</a>
-          <a href="#solutions">Links</a>
-          <a href="#benchmarks">Benchmarks</a>
+          <a href="#use-cases">Use cases</a>
+          <a href="#solutions">Solutions</a>
           <a href="#contact">Contact</a>
           <a href="https://github.com/zozo123/sandbox-landscape" target="_blank" rel="noreferrer">Repo</a>
         </div>
@@ -55,9 +53,8 @@
             "which execution guarantees does this workload need?"
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#matrix">Use the matrix</a>
-            <a class="button secondary" href="#solutions">Compare links and costs</a>
-            <a class="button secondary" href="#benchmarks">Benchmark rules</a>
+            <a class="button primary" href="#use-cases">Use cases</a>
+            <a class="button secondary" href="#solutions">Solutions</a>
             <a class="button secondary" href="https://www.linkedin.com/in/yossi-eliaz/" target="_blank" rel="noreferrer">
               Feedback on LinkedIn
             </a>
@@ -127,269 +124,67 @@
         </div>
       </section>
 
-      <section class="section rule-band" aria-labelledby="rule-title">
-        <div class="section-heading">
-          <p class="eyebrow">Decision rule</p>
-          <h2 id="rule-title">You are buying execution guarantees.</h2>
-        </div>
-        <ol class="question-list">
-          <li>How dangerous is the code?</li>
-          <li>How long does it run?</li>
-          <li>Does state need to survive?</li>
-          <li>Does it need GitHub or CI integration?</li>
-          <li>Does it need GPU, RL, or post-training scale?</li>
-          <li>Does it need auto-healing, retries, or orchestration?</li>
-          <li>Does it need enterprise credential control?</li>
-        </ol>
-      </section>
-
-      <section class="section" id="matrix" aria-labelledby="matrix-title">
+      <section class="section use-cases-band" id="use-cases" aria-labelledby="use-cases-title">
         <div class="section-heading wide">
-          <p class="eyebrow">Decision matrix</p>
-          <h2 id="matrix-title">Start with workload shape, then choose a sandbox class.</h2>
+          <p class="eyebrow">Use cases</p>
+          <h2 id="use-cases-title">Pick the workload first.</h2>
           <p>
-            This table is intentionally opinionated. Treat vendor claims as public-info
-            signals until they are verified by reproducible benchmarks.
+            Keep it simple: choose by the shape of the task, then route to the backend that
+            matches the guarantee.
           </p>
         </div>
 
-        <div class="matrix-controls" aria-label="Matrix controls">
-          <label class="search-label" for="matrix-search">Filter</label>
-          <input id="matrix-search" type="search" placeholder="Search workload, security, vendor, or need">
-          <div class="filter-buttons" role="group" aria-label="Preset filters">
-            <button class="filter active" type="button" data-filter="all">All</button>
-            <button class="filter" type="button" data-filter="eval">Evals</button>
-            <button class="filter" type="button" data-filter="ci">CI</button>
-            <button class="filter" type="button" data-filter="rl">RL</button>
-            <button class="filter" type="button" data-filter="long">Long tasks</button>
-            <button class="filter" type="button" data-filter="enterprise">Enterprise</button>
-          </div>
-        </div>
-
         <div class="table-wrap">
-          <table class="decision-table">
+          <table class="decision-table compact-table">
             <thead>
               <tr>
-                <th scope="col">Workload</th>
-                <th scope="col">State</th>
-                <th scope="col">Scale</th>
-                <th scope="col">Security</th>
-                <th scope="col">Best choice</th>
+                <th scope="col">Use case</th>
+                <th scope="col">Need</th>
+                <th scope="col">Good fit</th>
               </tr>
             </thead>
-            <tbody id="matrix-body">
-              <tr data-tags="code interpreter wasm">
-                <td>Small code inside model loop</td>
-                <td>No</td>
-                <td>Low</td>
-                <td>Medium</td>
-                <td>Monty / WASM / model-native code execution</td>
+            <tbody>
+              <tr>
+                <td>Code interpreter</td>
+                <td>Short, isolated execution</td>
+                <td>E2B / Modal / OpenAI / Anthropic / Gemini</td>
               </tr>
-              <tr data-tags="code interpreter data analysis">
-                <td>Data analysis / code interpreter</td>
-                <td>Low</td>
-                <td>Medium</td>
-                <td>Medium</td>
-                <td>E2B / Modal / Anthropic / OpenAI / Gemini / AWS code tools</td>
+              <tr>
+                <td>Evals and RL</td>
+                <td>Parallel runs and harness control</td>
+                <td>Harbor / Modal / Daytona / Tensorlake</td>
               </tr>
-              <tr data-tags="eval agent benchmark harbor modal daytona">
-                <td>Agent benchmark evals</td>
-                <td>No / medium</td>
-                <td>High</td>
-                <td>Medium / high</td>
-                <td>Harbor + Modal / Daytona</td>
+              <tr>
+                <td>CI and PR checks</td>
+                <td>Cheap, repeatable validation</td>
+                <td>GitHub Actions / ARC / Docker Sandboxes</td>
               </tr>
-              <tr data-tags="eval swe terminal bench">
-                <td>SWE-bench / Terminal-Bench</td>
-                <td>Medium</td>
-                <td>High</td>
-                <td>High</td>
-                <td>Harbor + Daytona / Modal / E2B</td>
-              </tr>
-              <tr data-tags="ci github actions">
-                <td>GitHub Actions ordinary CI</td>
-                <td>No</td>
-                <td>Medium</td>
-                <td>Medium</td>
-                <td>GitHub-hosted runners</td>
-              </tr>
-              <tr data-tags="ci github actions arc private">
-                <td>GitHub Actions private infra</td>
-                <td>No</td>
-                <td>High</td>
-                <td>High</td>
-                <td>ARC ephemeral self-hosted runners</td>
-              </tr>
-              <tr data-tags="ci pr validation docker daytona">
-                <td>AI-generated PR validation</td>
-                <td>No / medium</td>
-                <td>Medium</td>
-                <td>High</td>
-                <td>ARC + Docker Sandboxes / Daytona / Crabbox</td>
-              </tr>
-              <tr data-tags="long coding agent daytona runloop islo">
-                <td>Long-running coding agent</td>
-                <td>Yes</td>
-                <td>Medium</td>
-                <td>High</td>
+              <tr>
+                <td>Long-running agents</td>
+                <td>Persistent state and recovery</td>
                 <td>Daytona / Runloop / Islo / exe.dev</td>
               </tr>
-              <tr data-tags="enterprise unattended agent islo runloop docker">
-                <td>Enterprise unattended agent</td>
-                <td>Yes</td>
-                <td>Medium</td>
-                <td>Very high</td>
-                <td>Islo / Runloop / Docker Sandboxes</td>
-              </tr>
-              <tr data-tags="rl post training rollout modal harbor">
-                <td>Post-training RL rollouts</td>
-                <td>Usually no</td>
-                <td>Very high</td>
-                <td>Medium / high</td>
-                <td>Modal + Harbor</td>
-              </tr>
-              <tr data-tags="rl stateful tensorlake daytona runloop fly sprites">
-                <td>Stateful RL environments</td>
-                <td>Yes</td>
-                <td>High</td>
-                <td>High</td>
-                <td>Tensorlake / Daytona / Runloop / Fly Sprites</td>
-              </tr>
-              <tr data-tags="long auto healing temporal">
-                <td>Auto-healing agent workflow</td>
-                <td>Yes</td>
-                <td>Medium / high</td>
-                <td>High</td>
-                <td>Temporal + sandbox backend</td>
-              </tr>
-              <tr data-tags="eval rl spawning experiments modal harbor daytona tensorlake">
-                <td>Auto-spawning experiments</td>
-                <td>Snapshot</td>
-                <td>Very high</td>
-                <td>Medium / high</td>
-                <td>Modal / Harbor / Daytona / Tensorlake / Crabbox</td>
-              </tr>
-              <tr data-tags="long browser research e2b desktop daytona tensorlake">
-                <td>Browser / research agents</td>
-                <td>Medium</td>
-                <td>Medium</td>
-                <td>High</td>
-                <td>E2B Desktop / Daytona / Tensorlake / browser-specific sandbox</td>
-              </tr>
-              <tr data-tags="enterprise production adjacent approvals">
-                <td>Production-adjacent actions</td>
-                <td>Yes</td>
-                <td>Medium</td>
-                <td>Very high</td>
-                <td>Islo / Runloop / Docker Sandboxes + approvals</td>
+              <tr>
+                <td>Brokered enterprise workflows</td>
+                <td>Policy, credentials, routing</td>
+                <td>Crabbox / custom broker / ARC</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section class="section split-band" id="router" aria-labelledby="router-title">
-        <div class="section-heading">
-          <p class="eyebrow">Reference architecture</p>
-          <h2 id="router-title">Use a sandbox portfolio, not one backend.</h2>
-          <p>
-            Put a control plane above the providers so evals, CI, long-running agents,
-            and RL rollouts can evolve independently.
-          </p>
-        </div>
-
-        <div class="architecture">
-          <div class="arch-row">
-            <span>Model layer</span>
-            <strong>OpenAI / Anthropic / Gemini</strong>
-          </div>
-          <div class="arch-row">
-            <span>Agent loop</span>
-            <strong>LangGraph / OpenAI Agents SDK / custom agent</strong>
-          </div>
-          <div class="arch-row">
-            <span>Durability</span>
-            <strong>Temporal or equivalent workflow engine</strong>
-          </div>
-          <div class="arch-row highlight">
-            <span>Router</span>
-            <strong>Sandbox broker selects backend by guarantees: Crabbox, custom broker, or provider router</strong>
-          </div>
-          <div class="backend-grid">
-            <article>
-              <h3>Eval / RL</h3>
-              <p>Harbor + Modal for benchmark harnesses, reward execution, and parallel rollouts.</p>
-            </article>
-            <article>
-              <h3>Stateful work</h3>
-              <p>Daytona, Runloop, Islo, exe.dev, or Tensorlake for long-lived repo and browser tasks.</p>
-            </article>
-            <article>
-              <h3>CI safety</h3>
-              <p>GitHub Actions ARC, Docker Sandboxes, and isolated runners for PR validation.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="classes-title">
-        <div class="section-heading wide">
-          <p class="eyebrow">Sandbox classes</p>
-          <h2 id="classes-title">Map products by what they are responsible for.</h2>
-        </div>
-        <div class="class-grid">
-          <article class="class-card">
-            <p class="class-label">Short execution</p>
-            <h3>Code interpreter sandboxes</h3>
-            <p>E2B, Modal Sandbox, model-native code tools, and cloud code interpreters.</p>
-          </article>
-          <article class="class-card">
-            <p class="class-label">Persistent work</p>
-            <h3>Stateful agent computers</h3>
-            <p>Daytona, Runloop, Islo, Tensorlake, Docker Sandboxes, exe.dev, and Fly Sprites.</p>
-          </article>
-          <article class="class-card">
-            <p class="class-label">Measurement</p>
-            <h3>Eval and rollout control planes</h3>
-            <p>Harbor, SWE-bench-style harnesses, Terminal-Bench-style tasks, and reward services.</p>
-          </article>
-          <article class="class-card">
-            <p class="class-label">Survival</p>
-            <h3>Durable orchestration</h3>
-            <p>Temporal, Inngest, Trigger.dev, Dagster, Prefect, Argo Workflows, and Kubernetes-native sandbox APIs.</p>
-          </article>
-        </div>
-      </section>
-
       <section class="section solution-band" id="solutions" aria-labelledby="solutions-title">
         <div class="section-heading wide">
-          <p class="eyebrow">Official links</p>
-          <h2 id="solutions-title">Company links, solution pages, and public cost signals.</h2>
+          <p class="eyebrow">Solutions</p>
+          <h2 id="solutions-title">Keep the surface area small.</h2>
           <p>
-            Use this as a research starting point. Prices are public snapshots from
-            vendor pages and should be rechecked before buying or benchmarking.
+            Start with a few well-known backends and official docs, then expand only when the
+            workload needs it.
           </p>
         </div>
 
-        <div class="cost-rail" aria-label="Cost summary">
-          <article>
-            <span>Best for transparent metering</span>
-            <strong>Modal, Daytona, Runloop, Islo, Tensorlake, exe.dev</strong>
-            <p>Published CPU/RAM/storage rates make early workload modeling possible.</p>
-          </article>
-          <article>
-            <span>Best for provider routing</span>
-            <strong>Crabbox, ARC, custom brokers, provider routers</strong>
-            <p>Broker layers preserve a local loop while moving spend and credentials behind policy.</p>
-          </article>
-          <article>
-            <span>Cost caveat</span>
-            <strong>Enterprise features often move to sales-led pricing</strong>
-            <p>VPC, SSO, higher concurrency, compliance, and support usually change economics.</p>
-          </article>
-        </div>
-
-        <div class="solution-grid">
+        <div class="solution-grid simple-solution-grid">
           <article class="solution-card">
             <h3>Code execution</h3>
             <ul class="link-list">
@@ -457,171 +252,7 @@
             </ul>
           </article>
         </div>
-
-        <div class="pricing-wrap" aria-labelledby="pricing-title">
-          <div class="pricing-heading">
-            <p class="eyebrow">Cost index</p>
-            <h3 id="pricing-title">Public cost signals to verify before selection.</h3>
-          </div>
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th scope="col">Solution</th>
-                <th scope="col">Company / project</th>
-                <th scope="col">Public cost signal</th>
-                <th scope="col">Links</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Remote testbox broker</td>
-                <td>Crabbox / OpenClaw</td>
-                <td>Open-source broker and CLI; cost comes from leased provider capacity, spend caps, warm boxes, and Cloudflare/infra operations.</td>
-                <td><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Docs</a> <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Repo</a></td>
-              </tr>
-              <tr>
-                <td>E2B sandboxes</td>
-                <td>E2B</td>
-                <td>Hobby free + usage; Pro $150/mo + usage; CPU and RAM metered per second.</td>
-                <td><a href="https://e2b.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://e2b.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Modal Sandboxes</td>
-                <td>Modal</td>
-                <td>Starter $0 + compute; Team $250/mo + compute; sandbox CPU/RAM billed per second.</td>
-                <td><a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Solution</a> <a href="https://modal.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>AI sandboxes</td>
-                <td>Daytona</td>
-                <td>$200 free compute; vCPU, memory, storage, and GPU billed by time used.</td>
-                <td><a href="https://www.daytona.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.daytona.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Devboxes</td>
-                <td>Runloop</td>
-                <td>Basic free + usage; Pro $250/mo + usage; devbox CPU/RAM/storage billed separately.</td>
-                <td><a href="https://www.runloop.ai/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.runloop.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Long-running AI sandboxes</td>
-                <td>Islo</td>
-                <td>$50 free credits; CPU, memory, and storage billed per provisioned hour.</td>
-                <td><a href="https://islo.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://islo.dev/" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Stateful microVM sandboxes</td>
-                <td>Tensorlake</td>
-                <td>Free tier; On-Demand $0 base + usage; Pro $250/mo + discounted usage.</td>
-                <td><a href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.tensorlake.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Persistent agent VMs</td>
-                <td>exe.dev</td>
-                <td>$20/month public VM plan; includes shared 2 CPU, 8 GB RAM, 25 GB disk across up to 50 VMs; production usage is sales-led.</td>
-                <td><a href="https://exe.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://exe.dev/#pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Docker Sandboxes</td>
-                <td>Docker</td>
-                <td>AI sandbox docs are public; pricing depends on Docker plan and feature availability.</td>
-                <td><a href="https://docs.docker.com/ai/sandboxes/" target="_blank" rel="noreferrer">Solution</a> <a href="https://www.docker.com/pricing/" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>GitHub-hosted runners</td>
-                <td>GitHub</td>
-                <td>Public repos use standard runners free; private usage has included quota and per-minute rates.</td>
-                <td><a href="https://github.com/features/actions" target="_blank" rel="noreferrer">Solution</a> <a href="https://docs.github.com/en/billing/reference/actions-minute-multipliers" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Actions Runner Controller</td>
-                <td>GitHub / Kubernetes</td>
-                <td>Controller is open source; pay for Kubernetes/cloud infrastructure and Actions billing where applicable.</td>
-                <td><a href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">Docs</a> <a href="https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions" target="_blank" rel="noreferrer">Billing</a></td>
-              </tr>
-              <tr>
-                <td>Harbor eval framework</td>
-                <td>Harbor</td>
-                <td>Open source; runtime cost comes from selected execution backend and model calls.</td>
-                <td><a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Repo</a></td>
-              </tr>
-              <tr>
-                <td>Temporal</td>
-                <td>Temporal</td>
-                <td>Self-host or Temporal Cloud; pricing is usage and namespace dependent.</td>
-                <td><a href="https://temporal.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://temporal.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Braintrust</td>
-                <td>Braintrust</td>
-                <td>Starter free; Pro $249/mo; usage for processed data and scores.</td>
-                <td><a href="https://www.braintrust.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.braintrust.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>LangSmith</td>
-                <td>LangChain</td>
-                <td>Developer $0/seat; Plus $39/seat/mo; pay-as-you-go traces and deployment runs.</td>
-                <td><a href="https://www.langchain.com/langsmith" target="_blank" rel="noreferrer">Solution</a> <a href="https://www.langchain.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Langfuse</td>
-                <td>Langfuse</td>
-                <td>Hobby free; Core $29/mo; Pro $199/mo; units and retention drive cost.</td>
-                <td><a href="https://langfuse.com/" target="_blank" rel="noreferrer">Site</a> <a href="https://langfuse.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Trigger.dev</td>
-                <td>Trigger.dev</td>
-                <td>Cloud tiers and run/concurrency limits; open-source self-hosting shifts cost to infra.</td>
-                <td><a href="https://trigger.dev/" target="_blank" rel="noreferrer">Site</a> <a href="https://trigger.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Inngest</td>
-                <td>Inngest</td>
-                <td>Cloud pricing depends on plan, function runs, and event volume.</td>
-                <td><a href="https://www.inngest.com/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.inngest.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Prefect</td>
-                <td>Prefect</td>
-                <td>Open-source option plus managed cloud plans.</td>
-                <td><a href="https://www.prefect.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.prefect.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-              <tr>
-                <td>Dagster</td>
-                <td>Dagster</td>
-                <td>Open-source option plus Dagster+ cloud plans.</td>
-                <td><a href="https://dagster.io/" target="_blank" rel="noreferrer">Site</a> <a href="https://dagster.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="section benchmark-band" id="benchmarks" aria-labelledby="benchmark-title">
-        <div class="section-heading">
-          <p class="eyebrow">Benchmark transparency</p>
-          <h2 id="benchmark-title">Future benchmarks must be reproducible and attributed.</h2>
-          <p>
-            This repo should grow gradually. Every benchmark should be created from public
-            information, cite its sources, and disclose the agent used to create or run it.
-          </p>
-        </div>
-        <div class="benchmark-grid">
-          <article>
-            <h3>Public-info only</h3>
-            <p>Use public docs, public repos, public product pages, changelogs, and reproducible local experiments.</p>
-          </article>
-          <article>
-            <h3>Agent disclosure</h3>
-            <p>Record the agent, model, prompt, date, repo commit, tools, and human edits for each benchmark.</p>
-          </article>
-          <article>
-            <h3>Evidence over claims</h3>
-            <p>Publish harness code, logs, raw outputs, scoring rubric, environment config, and failures.</p>
-          </article>
-        </div>
-        <a class="text-link" href="BENCHMARKS.md">Read the benchmark protocol</a>
+        <p class="solution-note">Benchmark notes live in <a href="BENCHMARKS.md">BENCHMARKS.md</a>.</p>
       </section>
 
       <section class="section contact-band" id="contact" aria-labelledby="contact-title">

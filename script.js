@@ -14,6 +14,10 @@ function rowMatches(row, query, filter) {
 }
 
 function applyFilters() {
+  if (!searchInput) {
+    return;
+  }
+
   const query = searchInput.value.trim().toLowerCase();
 
   rows.forEach((row) => {
@@ -21,12 +25,14 @@ function applyFilters() {
   });
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    activeFilter = button.dataset.filter;
-    filterButtons.forEach((item) => item.classList.toggle("active", item === button));
-    applyFilters();
+if (searchInput && rows.length > 0 && filterButtons.length > 0) {
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach((item) => item.classList.toggle("active", item === button));
+      applyFilters();
+    });
   });
-});
 
-searchInput.addEventListener("input", applyFilters);
+  searchInput.addEventListener("input", applyFilters);
+}
