@@ -55,6 +55,8 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
 - If a claim may have changed, verify it against public sources and include the date in the relevant benchmark or source note.
 - Separate measured behavior from vendor positioning.
 - Keep the tone sober, technical, and useful for Hacker News readers.
+- Keep official solution links on the website pointed at public vendor pages,
+  documentation, or canonical open-source repositories.
 
 ## Files
 
@@ -121,3 +123,11 @@ https://www.linkedin.com/in/zozo123/
 ```
 
 If this is wrong, update it in `index.html`, `README.md`, and `LAUNCH.md`.
+
+## Disclosure
+
+Keep the footer disclosure concise:
+
+```text
+As of May 15, 2026, Yossi Eliaz is part of Incredibuild and was a founding member of Islo.dev.
+```

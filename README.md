@@ -65,6 +65,10 @@ Benchmarks added to this repo should be created from public information and repr
 
 See [BENCHMARKS.md](BENCHMARKS.md).
 
+## Official Links
+
+The website includes an official-links section for the products, docs, and repositories mentioned in the matrix. Keep those links pointed at public vendor pages or canonical open-source repositories.
+
 ## GitHub Pages
 
 The workflow in `.github/workflows/pages.yml` deploys the static site from the repository root.
