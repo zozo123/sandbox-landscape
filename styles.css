@@ -650,23 +650,33 @@ tbody tr.is-hidden {
 }
 
 .solution-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .solution-grid article {
   min-height: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.33fr) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: 26px;
+  row-gap: 8px;
+  align-items: start;
+  padding: 18px;
 }
 
 .solution-grid h3 {
+  grid-column: 1;
+  grid-row: 2;
   margin-bottom: 4px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-size: clamp(1.08rem, 1.5vw, 1.3rem);
 }
 
 .solution-grid p {
+  grid-column: 1;
+  grid-row: 3;
   margin: 0 0 10px;
   color: var(--muted);
   font-size: 0.91rem;
@@ -683,6 +693,8 @@ tbody tr.is-hidden {
 }
 
 .tier-label {
+  grid-column: 1;
+  grid-row: 1;
   width: fit-content;
   padding: 3px 7px;
   border: 1px solid var(--line);
@@ -696,17 +708,21 @@ tbody tr.is-hidden {
 }
 
 .vendor-list {
+  grid-column: 2;
+  grid-row: 1 / span 3;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(214px, 1fr));
   gap: 8px;
-  margin-top: 2px;
+  width: 100%;
+  margin-top: 0;
 }
 
 .vendor-item {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
+  grid-template-columns: 34px minmax(0, 1fr);
   gap: 10px;
   align-items: center;
-  min-height: 54px;
+  min-height: 50px;
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 7px;
@@ -722,8 +738,8 @@ tbody tr.is-hidden {
 
 .vendor-mark {
   display: inline-grid;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   border: 1px solid var(--line-strong);
   border-radius: 7px;
@@ -834,8 +850,24 @@ tbody tr.is-hidden {
   }
 
   .use-case-grid,
-  .solution-grid,
   .method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solution-grid article {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .solution-grid article > .tier-label,
+  .solution-grid article > h3,
+  .solution-grid article > p,
+  .solution-grid article > .vendor-list {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .solution-grid article > .vendor-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -906,9 +938,16 @@ tbody tr.is-hidden {
   }
 
   .use-case-grid,
-  .solution-grid,
   .method-grid,
   .runtime-map {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-grid article {
+    padding: 16px;
+  }
+
+  .solution-grid article > .vendor-list {
     grid-template-columns: 1fr;
   }
 
