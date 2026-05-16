@@ -43,7 +43,8 @@ Read in this order:
 2. `README.md`
 3. `BENCHMARKS.md`
 4. `PROMPT.md`
-5. The specific site or doc file you are editing
+5. `DESIGN.md` for UI or canvas work
+6. The specific site or doc file you are editing
 
 Do not load or rewrite everything unless the task truly requires it. Keep future context compact by updating this file when project rules change, and use `PROMPT.md` only for provenance or prompt history that matters later.
 
@@ -81,6 +82,11 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
   scrape their directory; link to it as an adjacent reference.
 - Use low-level systems cues: Vim-like command text, monospace labels, compact
   stats, status lines, precise borders, and execution diagrams.
+- For dynamic visuals, prefer deterministic seeded canvas graphics that explain
+  execution routes, not decorative animation.
+- Keep accessibility from the installed `accessibility` skill in scope: native
+  controls, visible focus, sufficient contrast, reduced-motion behavior, and
+  textual equivalents for canvas graphics.
 - Avoid generic SaaS hero styling, heavy gradients, decorative blobs, or
   marketing copy. The page should feel like a clear technical note with a
   polished console surface.
@@ -92,12 +98,15 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
 ```text
 index.html                  Main static site
 styles.css                  Site layout and visual design
-script.js                   Matrix filtering only
+script.js                   Matrix filtering and execution atlas canvas
+DESIGN.md                   Design philosophy and canvas/accessibility notes
 README.md                   Repo overview and local/deploy instructions
 BENCHMARKS.md               Benchmark protocol and disclosure template
 PROMPT.md                   Initial prompt provenance and agent disclosure
 LAUNCH.md                   Hacker News launch copy and checklist
 .github/workflows/pages.yml GitHub Pages deployment
+.agents/skills              Local skills installed with `npx skills add`
+skills-lock.json            Installed skill lockfile
 ```
 
 ## Update Workflow

@@ -40,7 +40,8 @@ http://localhost:8000
 ```text
 index.html                 Static website
 styles.css                 Site styling
-script.js                  Matrix filtering
+script.js                  Matrix filtering and execution atlas canvas
+DESIGN.md                  Visual philosophy and accessibility notes
 BENCHMARKS.md              Benchmark methodology and disclosure template
 PROMPT.md                  Prompt provenance and agent disclosure
 AGENTS.md                  Compact operating brief for future coding agents
@@ -72,6 +73,8 @@ The website includes official links and public cost signals for the products, do
 Cost notes are snapshots from public pricing pages. Recheck pricing before using the site for vendor selection or benchmarks.
 
 The page also links to [officialskills.sh](https://officialskills.sh/) as an adjacent agent-skills registry. This repo is focused on execution boundaries and sandbox infrastructure, not skill packaging.
+
+The repo includes local `.agents/skills` installs for accessibility, canvas-design, and algorithmic-art so future agents can keep UI work constrained to accessibility, visual clarity, and deterministic generative graphics.
 
 ## GitHub Pages
 

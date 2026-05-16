@@ -29,6 +29,7 @@
           <span>AI Sandbox Landscape</span>
         </a>
         <div class="nav-links">
+          <a href="#atlas">Atlas</a>
           <a href="#runtime-shapes">Runtime</a>
           <a href="#use-cases">Use cases</a>
           <a href="#matrix">Matrix</a>
@@ -140,6 +141,63 @@
         </ul>
       </section>
 
+      <section class="section atlas-section" id="atlas" aria-labelledby="atlas-title">
+        <div class="section-heading">
+          <p class="kicker">Execution atlas</p>
+          <h2 id="atlas-title">Route the workload before picking a runtime.</h2>
+          <p>Each path starts with code risk and ends with evidence. The useful question is not “which sandbox?” but which control loop, reset policy, state model, and artifact trail the workload needs.</p>
+        </div>
+
+        <div class="atlas-shell">
+          <div class="atlas-visual">
+            <canvas
+              id="execution-atlas"
+              width="1200"
+              height="640"
+              role="img"
+              aria-label="Animated map showing workload routes through control, sandbox, and evidence layers."
+            ></canvas>
+            <div class="atlas-nodes" aria-hidden="true">
+              <span class="atlas-node node-workload">workload</span>
+              <span class="atlas-node node-control">control</span>
+              <span class="atlas-node node-sandbox">sandbox</span>
+              <span class="atlas-node node-evidence">evidence</span>
+            </div>
+          </div>
+
+          <div class="atlas-controls" aria-label="Execution atlas routes">
+            <button class="atlas-route active" type="button" data-route="eval" aria-pressed="true">
+              <span>01</span>
+              <strong>Eval / benchmark</strong>
+              <small>Task → harness → clean sandbox → score</small>
+            </button>
+            <button class="atlas-route" type="button" data-route="rl" aria-pressed="false">
+              <span>02</span>
+              <strong>RL rollout</strong>
+              <small>Episode fan-out → reset → reward traces</small>
+            </button>
+            <button class="atlas-route" type="button" data-route="pr" aria-pressed="false">
+              <span>03</span>
+              <strong>Generated PR</strong>
+              <small>Runner policy → isolated build → test evidence</small>
+            </button>
+            <button class="atlas-route" type="button" data-route="long" aria-pressed="false">
+              <span>04</span>
+              <strong>Long agent task</strong>
+              <small>Workspace → snapshot → resume → diff</small>
+            </button>
+            <button class="atlas-route" type="button" data-route="prod" aria-pressed="false">
+              <span>05</span>
+              <strong>Production generated code</strong>
+              <small>Policy gate → microVM → audit trail</small>
+            </button>
+            <p id="atlas-summary" class="atlas-summary" aria-live="polite">
+              Eval benchmark route: task definition, agent disclosure, clean environment, logs, artifacts, and a reproducible score.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="section compact-section" id="runtime-shapes" aria-labelledby="runtime-shapes-title">
         <div class="section-heading">
           <p class="kicker">Runtime shapes</p>
@@ -226,16 +284,16 @@
           <label class="search-label" for="matrix-search">Filter</label>
           <input id="matrix-search" type="search" placeholder="Filter by workload, vendor, security, state, CI, RL">
           <div class="filter-buttons" role="group" aria-label="Preset filters">
-            <button class="filter active" type="button" data-filter="all">All</button>
-            <button class="filter" type="button" data-filter="eval">Evals</button>
-            <button class="filter" type="button" data-filter="ci">CI</button>
-            <button class="filter" type="button" data-filter="rl">RL</button>
-            <button class="filter" type="button" data-filter="long">Long tasks</button>
-            <button class="filter" type="button" data-filter="enterprise">Enterprise</button>
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" type="button" data-filter="eval" aria-pressed="false">Evals</button>
+            <button class="filter" type="button" data-filter="ci" aria-pressed="false">CI</button>
+            <button class="filter" type="button" data-filter="rl" aria-pressed="false">RL</button>
+            <button class="filter" type="button" data-filter="long" aria-pressed="false">Long tasks</button>
+            <button class="filter" type="button" data-filter="enterprise" aria-pressed="false">Enterprise</button>
           </div>
         </div>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" aria-label="Scrollable workload decision matrix">
           <table class="decision-table">
             <thead>
               <tr>
@@ -597,7 +655,7 @@
           <p>Pricing changes. Treat this as a pointer to public pricing surfaces, not a purchasing quote.</p>
         </div>
 
-        <div class="table-wrap compact">
+        <div class="table-wrap compact" tabindex="0" aria-label="Scrollable public cost signal table">
           <table class="pricing-table">
             <thead>
               <tr>
