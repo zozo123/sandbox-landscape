@@ -6,16 +6,16 @@
     <title>AI Sandbox Landscape</title>
     <meta
       name="description"
-      content="A living public-info map of AI agent sandbox choices for evals, CI, RL rollouts, long-running coding agents, and production-adjacent workflows."
+      content="A concise public-info guide to choosing AI agent sandboxes by workload: evals, CI, RL rollouts, long-running agents, browser tasks, and production-adjacent automation."
     >
     <meta property="og:title" content="AI Sandbox Landscape">
     <meta
       property="og:description"
-      content="Choose sandboxes by execution guarantees: state, scale, security, CI integration, orchestration, and evidence capture."
+      content="Choose AI agent sandboxes by execution guarantees: state, scale, security, cost, CI integration, and evidence capture."
     >
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#f8f7f2">
+    <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -30,260 +30,402 @@
         </a>
         <div class="nav-links">
           <a href="#use-cases">Use cases</a>
+          <a href="#matrix">Matrix</a>
           <a href="#solutions">Solutions</a>
-          <a href="#contact">Contact</a>
-          <a href="https://github.com/zozo123/sandbox-landscape" target="_blank" rel="noreferrer">Repo</a>
+          <a href="#costs">Costs</a>
+          <a href="#method">Method</a>
+          <a href="https://github.com/zozo123/sandbox-landscape" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </nav>
     </header>
 
     <main id="top">
-      <section class="launch-strip" aria-label="Site status">
-        <span>When to use sandboxes</span>
-        <span>Use cases, solutions, costs</span>
-        <span>Short and public-info only</span>
-      </section>
-
-      <section class="hero section">
-        <div class="hero-copy">
-          <p class="eyebrow">Living public-info atlas</p>
-          <h1>When sandboxes matter, what to use, and what they cost.</h1>
-          <p class="hero-lede">Short guide for AI sandboxes: when to use them, why they matter, the main solutions, and public cost signals.</p>
-          <div class="hero-brief">
-            <ul>
-              <li><strong>When:</strong> short runs, evals, CI checks, or long agents.</li>
-              <li><strong>Why:</strong> pick by duration, state, and security guarantees.</li>
-              <li><strong>How:</strong> start small—use a single backend, broker when policies require it.</li>
-            </ul>
-          </div>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="https://www.linkedin.com/in/yossi-eliaz/" target="_blank" rel="noreferrer">
-              Reach out on LinkedIn
-            </a>
-            <a class="button secondary" href="#use-cases">Use cases</a>
-            <a class="button secondary" href="#solutions">Solutions</a>
-          </div>
-          <dl class="hero-stats" aria-label="Landscape coverage">
-            <div>
-              <dt>40+</dt>
-              <dd>public links</dd>
-            </div>
-            <div>
-              <dt>20</dt>
-              <dd>cost signals</dd>
-            </div>
-            <div>
-              <dt>0</dt>
-              <dd>private claims</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="atlas-panel" aria-label="Execution guarantee map">
-          <div class="atlas-topbar" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <strong>execution router</strong>
-          </div>
-          <div class="atlas-core">
-            <div class="router-card">
-              <span>Input</span>
-              <strong>Workload</strong>
-              <small>danger, duration, state, scale</small>
-            </div>
-            <div class="router-card router-card-dark">
-              <span>Policy</span>
-              <strong>Guarantees</strong>
-              <small>isolation, network, secrets, evidence</small>
-            </div>
-            <div class="router-card">
-              <span>Output</span>
-              <strong>Backend</strong>
-              <small>ephemeral, persistent, brokered</small>
-            </div>
-          </div>
-          <div class="atlas-lanes">
-            <article>
-              <span>01</span>
-              <strong>Ephemeral</strong>
-              <p>E2B, Modal, code tools</p>
-            </article>
-            <article>
-              <span>02</span>
-              <strong>Stateful</strong>
-              <p>Daytona, Runloop, Islo, exe.dev</p>
-            </article>
-            <article>
-              <span>03</span>
-              <strong>Brokered</strong>
-              <p>Crabbox, ARC, custom routers</p>
-            </article>
-            <article>
-              <span>04</span>
-              <strong>Measured</strong>
-              <p>Harbor, traces, raw artifacts</p>
-            </article>
-          </div>
+      <section class="hero">
+        <p class="kicker">Public-info guide for agent infrastructure</p>
+        <h1>Choose sandboxes by workload, not vendor category.</h1>
+        <p class="lede">
+          A compact landscape for evals, GitHub Actions, post-training/RL rollouts,
+          long-running coding agents, browser tasks, and production-adjacent automation.
+        </p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button primary" href="#use-cases">Start with use cases</a>
+          <a class="button" href="#solutions">Compare solutions</a>
+          <a class="button" href="#costs">See public cost signals</a>
         </div>
       </section>
 
-      <section class="section use-cases-band" id="use-cases" aria-labelledby="use-cases-title">
-        <div class="section-heading wide">
-          <p class="eyebrow">Use cases</p>
-          <h2 id="use-cases-title">Pick the workload first.</h2>
-          <p>Use the shortest path that matches the task.</p>
+      <section class="principle">
+        <div>
+          <span>Thesis</span>
+          <strong>You are not buying a sandbox. You are buying execution guarantees.</strong>
+        </div>
+        <ul>
+          <li>How dangerous is the code?</li>
+          <li>How long does it run?</li>
+          <li>Does state need to survive?</li>
+          <li>Does it need CI, GPU, RL, or orchestration?</li>
+          <li>Can you capture logs, diffs, artifacts, and scores?</li>
+        </ul>
+      </section>
+
+      <section class="section" id="use-cases" aria-labelledby="use-cases-title">
+        <div class="section-heading">
+          <p class="kicker">Use cases</p>
+          <h2 id="use-cases-title">Start here.</h2>
+          <p>Most mistakes come from using a short-lived code interpreter where a stateful agent computer, broker, or durable workflow is actually needed.</p>
+        </div>
+
+        <div class="use-case-grid">
+          <article>
+            <span>01</span>
+            <h3>Small code and data analysis</h3>
+            <p>Use model-native code execution, WASM, E2B, or Modal when state is minimal and the task is short.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Agent evals and benchmarks</h3>
+            <p>Use Harbor plus Modal, Daytona, E2B, or Docker depending on scale, repo realism, and isolation needs.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>GitHub Actions and PR validation</h3>
+            <p>Use GitHub-hosted runners first, ARC for private autoscaling, and isolated sandboxes for AI-generated work.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Long-running coding agents</h3>
+            <p>Use Daytona, Runloop, Islo, Tensorlake, or exe.dev when installed state, caches, logs, and partial work must survive.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>RL rollouts and auto-spawning</h3>
+            <p>Use Modal and Harbor for rollout scale. Add Daytona, Tensorlake, or Crabbox when environments need state or provider routing.</p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>Production-adjacent automation</h3>
+            <p>Use hardened stateful environments, credential boundaries, network policy, audit logs, and human approval gates.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="matrix" aria-labelledby="matrix-title">
+        <div class="section-heading">
+          <p class="kicker">Decision matrix</p>
+          <h2 id="matrix-title">Workload to default choice.</h2>
+        </div>
+
+        <div class="matrix-controls" aria-label="Matrix controls">
+          <label class="search-label" for="matrix-search">Filter</label>
+          <input id="matrix-search" type="search" placeholder="Filter by workload, vendor, security, state, CI, RL">
+          <div class="filter-buttons" role="group" aria-label="Preset filters">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="eval">Evals</button>
+            <button class="filter" type="button" data-filter="ci">CI</button>
+            <button class="filter" type="button" data-filter="rl">RL</button>
+            <button class="filter" type="button" data-filter="long">Long tasks</button>
+            <button class="filter" type="button" data-filter="enterprise">Enterprise</button>
+          </div>
         </div>
 
         <div class="table-wrap">
-          <table class="decision-table compact-table">
+          <table class="decision-table">
             <thead>
               <tr>
-                <th scope="col">Use case</th>
-                <th scope="col">Need</th>
-                <th scope="col">Good fit</th>
+                <th scope="col">Workload</th>
+                <th scope="col">State</th>
+                <th scope="col">Scale</th>
+                <th scope="col">Security</th>
+                <th scope="col">Default choice</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Code interpreter</td>
-                <td>Short, isolated execution</td>
-                <td>E2B / Modal / OpenAI / Anthropic / Gemini</td>
+            <tbody id="matrix-body">
+              <tr data-tags="code interpreter wasm">
+                <td>Small code inside model loop</td>
+                <td>No</td>
+                <td>Low</td>
+                <td>Medium</td>
+                <td>Monty / WASM / model-native code execution</td>
               </tr>
-              <tr>
-                <td>Evals and RL</td>
-                <td>Parallel runs and harness control</td>
-                <td>Harbor / Modal / Daytona / Tensorlake</td>
+              <tr data-tags="code interpreter data analysis">
+                <td>Data analysis / code interpreter</td>
+                <td>Low</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>E2B / Modal / Anthropic / OpenAI / Gemini / AWS code tools</td>
               </tr>
-              <tr>
-                <td>CI and PR checks</td>
-                <td>Cheap, repeatable validation</td>
-                <td>GitHub Actions / ARC / Docker Sandboxes</td>
+              <tr data-tags="eval agent benchmark harbor modal daytona">
+                <td>Agent benchmark evals</td>
+                <td>No / medium</td>
+                <td>High</td>
+                <td>Medium / high</td>
+                <td>Harbor + Modal / Daytona</td>
               </tr>
-              <tr>
-                <td>Long-running agents</td>
-                <td>Persistent state and recovery</td>
+              <tr data-tags="eval swe terminal bench">
+                <td>SWE-bench / Terminal-Bench</td>
+                <td>Medium</td>
+                <td>High</td>
+                <td>High</td>
+                <td>Harbor + Daytona / Modal / E2B</td>
+              </tr>
+              <tr data-tags="ci github actions">
+                <td>GitHub Actions ordinary CI</td>
+                <td>No</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>GitHub-hosted runners</td>
+              </tr>
+              <tr data-tags="ci github actions arc private">
+                <td>GitHub Actions private infra</td>
+                <td>No</td>
+                <td>High</td>
+                <td>High</td>
+                <td>ARC ephemeral self-hosted runners</td>
+              </tr>
+              <tr data-tags="ci pr validation docker daytona crabbox">
+                <td>AI-generated PR validation</td>
+                <td>No / medium</td>
+                <td>Medium</td>
+                <td>High</td>
+                <td>ARC + Docker Sandboxes / Daytona / Crabbox</td>
+              </tr>
+              <tr data-tags="long coding agent daytona runloop islo exe">
+                <td>Long-running coding agent</td>
+                <td>Yes</td>
+                <td>Medium</td>
+                <td>High</td>
                 <td>Daytona / Runloop / Islo / exe.dev</td>
               </tr>
-              <tr>
-                <td>Brokered enterprise workflows</td>
-                <td>Policy, credentials, routing</td>
-                <td>Crabbox / custom broker / ARC</td>
+              <tr data-tags="enterprise unattended agent islo runloop docker">
+                <td>Enterprise unattended agent</td>
+                <td>Yes</td>
+                <td>Medium</td>
+                <td>Very high</td>
+                <td>Islo / Runloop / Docker Sandboxes</td>
+              </tr>
+              <tr data-tags="rl post training rollout modal harbor">
+                <td>Post-training RL rollouts</td>
+                <td>Usually no</td>
+                <td>Very high</td>
+                <td>Medium / high</td>
+                <td>Modal + Harbor</td>
+              </tr>
+              <tr data-tags="rl stateful tensorlake daytona runloop fly sprites">
+                <td>Stateful RL environments</td>
+                <td>Yes</td>
+                <td>High</td>
+                <td>High</td>
+                <td>Tensorlake / Daytona / Runloop / Fly Sprites</td>
+              </tr>
+              <tr data-tags="long auto healing temporal">
+                <td>Auto-healing agent workflow</td>
+                <td>Yes</td>
+                <td>Medium / high</td>
+                <td>High</td>
+                <td>Temporal + sandbox backend</td>
+              </tr>
+              <tr data-tags="eval rl spawning experiments modal harbor daytona tensorlake crabbox">
+                <td>Auto-spawning experiments</td>
+                <td>Snapshot</td>
+                <td>Very high</td>
+                <td>Medium / high</td>
+                <td>Modal / Harbor / Daytona / Tensorlake / Crabbox</td>
+              </tr>
+              <tr data-tags="long browser research e2b desktop daytona tensorlake">
+                <td>Browser / research agents</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>High</td>
+                <td>E2B Desktop / Daytona / Tensorlake / browser-specific sandbox</td>
+              </tr>
+              <tr data-tags="enterprise production adjacent approvals">
+                <td>Production-adjacent actions</td>
+                <td>Yes</td>
+                <td>Medium</td>
+                <td>Very high</td>
+                <td>Islo / Runloop / Docker Sandboxes + approvals</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section class="section solution-band" id="solutions" aria-labelledby="solutions-title">
-        <div class="section-heading wide">
-          <p class="eyebrow">Solutions</p>
-          <h2 id="solutions-title">Keep the surface area small.</h2>
-          <p>Start with a few official backends and expand only when needed.</p>
+      <section class="section" id="solutions" aria-labelledby="solutions-title">
+        <div class="section-heading">
+          <p class="kicker">Solutions</p>
+          <h2 id="solutions-title">Public links by role.</h2>
+          <p>These are links to product pages, docs, or canonical repos. They are starting points for research, not benchmark results.</p>
         </div>
 
-        <div class="solution-grid simple-solution-grid">
-          <article class="solution-card">
+        <div class="solution-grid">
+          <article>
             <h3>Code execution</h3>
-            <ul class="link-list">
-              <li><a href="https://pydantic.dev/articles/pydantic-monty" target="_blank" rel="noreferrer">Monty</a></li>
-              <li><a href="https://e2b.dev/" target="_blank" rel="noreferrer">E2B</a></li>
-              <li><a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Modal Sandboxes</a></li>
-              <li><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox</a></li>
-              <li><a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/code-execution-tool" target="_blank" rel="noreferrer">Anthropic Code Execution</a></li>
-              <li><a href="https://platform.openai.com/docs/guides/tools-code-interpreter" target="_blank" rel="noreferrer">OpenAI Code Interpreter</a></li>
-              <li><a href="https://ai.google.dev/gemini-api/docs/code-execution" target="_blank" rel="noreferrer">Gemini Code Execution</a></li>
-              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/code-interpreter-tool.html" target="_blank" rel="noreferrer">AWS AgentCore Code Interpreter</a></li>
-            </ul>
+            <a href="https://pydantic.dev/articles/pydantic-monty" target="_blank" rel="noreferrer">Monty</a>
+            <a href="https://e2b.dev/" target="_blank" rel="noreferrer">E2B</a>
+            <a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Modal Sandboxes</a>
+            <a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/code-execution-tool" target="_blank" rel="noreferrer">Anthropic Code Execution</a>
+            <a href="https://platform.openai.com/docs/guides/tools-code-interpreter" target="_blank" rel="noreferrer">OpenAI Code Interpreter</a>
+            <a href="https://ai.google.dev/gemini-api/docs/code-execution" target="_blank" rel="noreferrer">Gemini Code Execution</a>
+            <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/code-interpreter-tool.html" target="_blank" rel="noreferrer">AWS AgentCore Code Interpreter</a>
           </article>
 
-          <article class="solution-card">
-            <h3>Eval and RL</h3>
-            <ul class="link-list">
-              <li><a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Harbor</a></li>
-              <li><a href="https://modal.com/" target="_blank" rel="noreferrer">Modal</a></li>
-              <li><a href="https://huggingface.co/docs/trl/index" target="_blank" rel="noreferrer">Hugging Face TRL</a></li>
-              <li><a href="https://www.swebench.com/" target="_blank" rel="noreferrer">SWE-bench</a></li>
-              <li><a href="https://www.tbench.ai/" target="_blank" rel="noreferrer">Terminal-Bench</a></li>
-              <li><a href="https://www.braintrust.dev/" target="_blank" rel="noreferrer">Braintrust</a></li>
-              <li><a href="https://www.langchain.com/langsmith" target="_blank" rel="noreferrer">LangSmith</a></li>
-              <li><a href="https://langfuse.com/" target="_blank" rel="noreferrer">Langfuse</a></li>
-            </ul>
-          </article>
-
-          <article class="solution-card">
+          <article>
             <h3>Stateful agent computers</h3>
-            <ul class="link-list">
-              <li><a href="https://www.daytona.io/" target="_blank" rel="noreferrer">Daytona</a></li>
-              <li><a href="https://www.runloop.ai/" target="_blank" rel="noreferrer">Runloop</a></li>
-              <li><a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo</a></li>
-              <li><a href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">Tensorlake</a></li>
-              <li><a href="https://docs.docker.com/ai/sandboxes/" target="_blank" rel="noreferrer">Docker Sandboxes</a></li>
-              <li><a href="https://exe.dev/" target="_blank" rel="noreferrer">exe.dev</a></li>
-              <li><a href="https://sprites.dev/" target="_blank" rel="noreferrer">Fly Sprites</a></li>
-            </ul>
+            <a href="https://www.daytona.io/" target="_blank" rel="noreferrer">Daytona</a>
+            <a href="https://www.runloop.ai/" target="_blank" rel="noreferrer">Runloop</a>
+            <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo</a>
+            <a href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">Tensorlake</a>
+            <a href="https://docs.docker.com/ai/sandboxes/" target="_blank" rel="noreferrer">Docker Sandboxes</a>
+            <a href="https://exe.dev/" target="_blank" rel="noreferrer">exe.dev</a>
+            <a href="https://sprites.dev/" target="_blank" rel="noreferrer">Fly Sprites</a>
           </article>
 
-          <article class="solution-card">
-            <h3>CI and orchestration</h3>
-            <ul class="link-list">
-              <li><a href="https://docs.github.com/actions/how-tos/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners" target="_blank" rel="noreferrer">GitHub Actions runners</a></li>
-              <li><a href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">Actions Runner Controller</a></li>
-              <li><a href="https://temporal.io/" target="_blank" rel="noreferrer">Temporal</a></li>
-              <li><a href="https://www.inngest.com/" target="_blank" rel="noreferrer">Inngest</a></li>
-              <li><a href="https://trigger.dev/" target="_blank" rel="noreferrer">Trigger.dev</a></li>
-              <li><a href="https://dagster.io/" target="_blank" rel="noreferrer">Dagster</a></li>
-              <li><a href="https://www.prefect.io/" target="_blank" rel="noreferrer">Prefect</a></li>
-              <li><a href="https://argo-workflows.readthedocs.io/" target="_blank" rel="noreferrer">Argo Workflows</a></li>
-              <li><a href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">Kubernetes Agent Sandbox</a></li>
-            </ul>
+          <article>
+            <h3>Eval, RL, and observability</h3>
+            <a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Harbor</a>
+            <a href="https://modal.com/" target="_blank" rel="noreferrer">Modal</a>
+            <a href="https://huggingface.co/docs/trl/index" target="_blank" rel="noreferrer">Hugging Face TRL</a>
+            <a href="https://www.swebench.com/" target="_blank" rel="noreferrer">SWE-bench</a>
+            <a href="https://www.tbench.ai/" target="_blank" rel="noreferrer">Terminal-Bench</a>
+            <a href="https://www.braintrust.dev/" target="_blank" rel="noreferrer">Braintrust</a>
+            <a href="https://www.langchain.com/langsmith" target="_blank" rel="noreferrer">LangSmith</a>
+            <a href="https://langfuse.com/" target="_blank" rel="noreferrer">Langfuse</a>
           </article>
 
-          <article class="solution-card solution-card-featured">
-            <h3>Broker layer</h3>
-            <ul class="link-list">
-              <li><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox docs</a></li>
-              <li><a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Crabbox repo</a></li>
-              <li><a href="https://crabbox.sh/#how-it-fits-together" target="_blank" rel="noreferrer">Broker architecture</a></li>
-              <li><a href="https://crabbox.sh/#quick-start" target="_blank" rel="noreferrer">CLI quick start</a></li>
-              <li><a href="https://exe.dev/" target="_blank" rel="noreferrer">exe.dev</a></li>
-            </ul>
+          <article>
+            <h3>CI, brokers, and orchestration</h3>
+            <a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox</a>
+            <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Crabbox repo</a>
+            <a href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">Actions Runner Controller</a>
+            <a href="https://temporal.io/" target="_blank" rel="noreferrer">Temporal</a>
+            <a href="https://www.inngest.com/" target="_blank" rel="noreferrer">Inngest</a>
+            <a href="https://trigger.dev/" target="_blank" rel="noreferrer">Trigger.dev</a>
+            <a href="https://dagster.io/" target="_blank" rel="noreferrer">Dagster</a>
+            <a href="https://www.prefect.io/" target="_blank" rel="noreferrer">Prefect</a>
+            <a href="https://argo-workflows.readthedocs.io/" target="_blank" rel="noreferrer">Argo Workflows</a>
+            <a href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">Kubernetes Agent Sandbox</a>
           </article>
-        </div>
-        <p class="solution-note">Benchmark notes live in <a href="BENCHMARKS.md">BENCHMARKS.md</a>.</p>
-        <div class="costs-brief">
-          <h3>Costs (at a glance)</h3>
-          <ul>
-            <li><strong>Hobby / Dev:</strong> free or low — Modal, E2B</li>
-            <li><strong>Team:</strong> ~$100–$300/mo + metered compute — Modal, Runloop</li>
-            <li><strong>Enterprise:</strong> sales-led; VPC/SSO and higher rates — Daytona, Islo</li>
-          </ul>
         </div>
       </section>
 
-      <section class="section contact-band" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Reach out</p>
-          <h2 id="contact-title">Need a correction or addition?</h2>
-          <p>Send it on LinkedIn.</p>
+      <section class="section" id="costs" aria-labelledby="costs-title">
+        <div class="section-heading">
+          <p class="kicker">Costs</p>
+          <h2 id="costs-title">Public cost signals.</h2>
+          <p>Pricing changes. Treat this as a pointer to public pricing surfaces, not a purchasing quote.</p>
         </div>
-        <a class="button primary" href="https://www.linkedin.com/in/yossi-eliaz/" target="_blank" rel="noreferrer">
-          Reach out on LinkedIn
-        </a>
+
+        <div class="table-wrap compact">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th scope="col">Solution</th>
+                <th scope="col">Cost signal</th>
+                <th scope="col">Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Crabbox</td>
+                <td>Open-source broker; spend comes from leased provider capacity and operations.</td>
+                <td><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Docs</a> <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Repo</a></td>
+              </tr>
+              <tr>
+                <td>E2B</td>
+                <td>Free/hobby entry plus usage; CPU and RAM metered per second.</td>
+                <td><a href="https://e2b.dev/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Modal</td>
+                <td>Plan plus compute usage; sandbox CPU/RAM billed by time used.</td>
+                <td><a href="https://modal.com/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Daytona</td>
+                <td>Usage-based vCPU, memory, storage, and GPU pricing.</td>
+                <td><a href="https://www.daytona.io/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Runloop</td>
+                <td>Plan plus usage; devbox CPU, RAM, and storage billed separately.</td>
+                <td><a href="https://www.runloop.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Islo</td>
+                <td>Usage pricing for CPU, memory, and storage.</td>
+                <td><a href="https://islo.dev/" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Tensorlake</td>
+                <td>Free tier plus usage-based on-demand and pro plans.</td>
+                <td><a href="https://www.tensorlake.ai/pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>exe.dev</td>
+                <td>Public VM plan; production usage is sales-led.</td>
+                <td><a href="https://exe.dev/#pricing" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>Docker Sandboxes</td>
+                <td>Depends on Docker plan and feature availability.</td>
+                <td><a href="https://www.docker.com/pricing/" target="_blank" rel="noreferrer">Pricing</a></td>
+              </tr>
+              <tr>
+                <td>GitHub Actions / ARC</td>
+                <td>Hosted runner minutes for GitHub; ARC also carries Kubernetes infrastructure cost.</td>
+                <td><a href="https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions" target="_blank" rel="noreferrer">Billing</a></td>
+              </tr>
+              <tr>
+                <td>Temporal / workflow tools</td>
+                <td>Self-hosted infrastructure or managed cloud plan usage.</td>
+                <td><a href="https://temporal.io/pricing" target="_blank" rel="noreferrer">Temporal pricing</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section method" id="method" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="kicker">Method</p>
+          <h2 id="method-title">How this should evolve.</h2>
+        </div>
+        <div class="method-grid">
+          <article>
+            <h3>Public information only</h3>
+            <p>Use public docs, public repos, public product pages, changelogs, and reproducible experiments.</p>
+          </article>
+          <article>
+            <h3>Agent disclosure</h3>
+            <p>Every benchmark should disclose prompt, agent/model, date, commit, harness, raw logs, and human edits.</p>
+          </article>
+          <article>
+            <h3>Evidence over positioning</h3>
+            <p>Vendor claims are leads. Benchmark results need code, logs, artifacts, scoring rubrics, and failure notes.</p>
+          </article>
+        </div>
+        <div class="method-links">
+          <a href="BENCHMARKS.md">Benchmark protocol</a>
+          <a href="PROMPT.md">Prompt provenance</a>
+          <a href="AGENTS.md">Agent instructions</a>
+          <a href="LAUNCH.md">Launch notes</a>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="kicker">Feedback</p>
+          <h2 id="contact-title">Want to be considered or correct something?</h2>
+          <p>Send public evidence, benchmark ideas, pricing corrections, or inclusion requests on LinkedIn.</p>
+        </div>
+        <a class="button primary" href="https://www.linkedin.com/in/zozo123/" target="_blank" rel="noreferrer">Reach out on LinkedIn</a>
       </section>
     </main>
 
     <footer class="footer">
       <p>AI Sandbox Landscape. Public-info baseline. Verify before production use.</p>
-      <p>
-        Seeded with Codex on May 15, 2026. See <a href="PROMPT.md">PROMPT.md</a> for provenance.
-        Public repo: <a href="https://github.com/zozo123/sandbox-landscape">github.com/zozo123/sandbox-landscape</a>.
-      </p>
-      <p class="disclosure">
-        Disclosure: As of May 15, 2026, Yossi Eliaz is part of
-        <a href="https://www.incredibuild.com/" target="_blank" rel="noreferrer">Incredibuild</a>
-        and was a founding member of <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo.dev</a>.
-      </p>
+      <p>Seeded with Codex on May 15, 2026. Public repo: <a href="https://github.com/zozo123/sandbox-landscape">github.com/zozo123/sandbox-landscape</a>.</p>
+      <p>Disclosure: As of May 16, 2026, Yossi Eliaz is part of <a href="https://www.incredibuild.com/" target="_blank" rel="noreferrer">Incredibuild</a> and was a founding member of <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo.dev</a>.</p>
     </footer>
 
     <script src="script.js"></script>

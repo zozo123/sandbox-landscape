@@ -134,5 +134,5 @@ If this is wrong, update it in `index.html`, `README.md`, and `LAUNCH.md`.
 Keep the footer disclosure concise:
 
 ```text
-As of May 15, 2026, Yossi Eliaz is part of Incredibuild and was a founding member of Islo.dev.
+As of May 16, 2026, Yossi Eliaz is part of Incredibuild and was a founding member of Islo.dev.
 ```
