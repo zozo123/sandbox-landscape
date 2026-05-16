@@ -22,7 +22,8 @@ Core thesis:
 
 ```text
 You are not buying a sandbox.
-You are buying execution guarantees.
+You are buying an execution contract:
+what may run, what persists, what is measured, and what can be stopped.
 ```
 
 The main workload dimensions are:
@@ -71,6 +72,9 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
   reference, not as this repo's own measurement.
 - Keep the officialskills.sh link visible as an adjacent agent-skills registry,
   not as a sandbox benchmark or vendor ranking.
+- Do not add a top-of-page "related registries" strip. Keep the hero focused,
+  use in-page jumps for navigation, and keep external references in Method,
+  Solutions, Costs, or the footer.
 - Keep cost signals conservative. Prefer linking to public pricing pages over
   embedding fragile exact numbers. If exact numbers are shown, verify them
   against public pricing pages and update the date-sensitive language.

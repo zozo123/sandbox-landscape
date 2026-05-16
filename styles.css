@@ -443,7 +443,7 @@ h3 {
   font-weight: 720;
 }
 
-.registry-strip {
+.jump-strip {
   display: flex;
   align-items: stretch;
   overflow-x: auto;
@@ -453,15 +453,16 @@ h3 {
   scrollbar-width: none;
 }
 
-.registry-strip::-webkit-scrollbar {
+.jump-strip::-webkit-scrollbar {
   display: none;
 }
 
-.registry-strip span,
-.registry-strip a {
+.jump-strip span,
+.jump-strip a {
   min-height: 48px;
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   padding: 0 22px;
   border-right: 1px solid var(--line);
   font-family: var(--mono);
@@ -469,18 +470,24 @@ h3 {
   white-space: nowrap;
 }
 
-.registry-strip span {
+.jump-strip span {
   color: #7d877d;
   text-transform: uppercase;
 }
 
-.registry-strip a {
-  color: var(--accent-ink);
+.jump-strip a {
+  color: var(--terminal-text);
   text-decoration: none;
 }
 
-.registry-strip a:hover {
+.jump-strip a em {
+  color: var(--accent-ink);
+  font-style: normal;
+}
+
+.jump-strip a:hover {
   background: var(--accent-soft);
+  color: var(--accent-ink);
 }
 
 .principle {

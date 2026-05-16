@@ -6,7 +6,8 @@ The central claim:
 
 ```text
 You are not buying a sandbox.
-You are buying execution guarantees.
+You are buying an execution contract:
+what may run, what persists, what is measured, and what can be stopped.
 ```
 
 For each workload, ask:
