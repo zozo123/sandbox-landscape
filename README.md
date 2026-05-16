@@ -96,5 +96,5 @@ The Hacker News title, submit link, first comment, and checklist live in [LAUNCH
 For corrections, additions, or to be considered for inclusion, reach out on LinkedIn:
 
 ```text
-https://www.linkedin.com/in/zozo123/
+https://www.linkedin.com/in/yossi-eliaz
 ```

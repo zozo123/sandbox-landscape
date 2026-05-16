@@ -142,7 +142,7 @@ Use `BENCHMARKS.md` as the source of truth.
 Current LinkedIn contact URL:
 
 ```text
-https://www.linkedin.com/in/zozo123/
+https://www.linkedin.com/in/yossi-eliaz
 ```
 
 If this is wrong, update it in `index.html`, `README.md`, and `LAUNCH.md`.
