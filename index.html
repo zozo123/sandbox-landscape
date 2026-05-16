@@ -340,66 +340,219 @@
 
         <div class="solution-grid">
           <article>
-            <h3>Code execution</h3>
-            <p>Small generated code, data transforms, code-interpreter cells, and capability-limited functions.</p>
-            <a href="https://pydantic.dev/articles/pydantic-monty" target="_blank" rel="noreferrer">Monty</a>
-            <a href="https://e2b.dev/" target="_blank" rel="noreferrer">E2B</a>
-            <a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Modal Sandboxes</a>
-            <a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/code-execution-tool" target="_blank" rel="noreferrer">Anthropic Code Execution</a>
-            <a href="https://platform.openai.com/docs/guides/tools-code-interpreter" target="_blank" rel="noreferrer">OpenAI Code Interpreter</a>
-            <a href="https://ai.google.dev/gemini-api/docs/code-execution" target="_blank" rel="noreferrer">Gemini Code Execution</a>
-            <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/code-interpreter-tool.html" target="_blank" rel="noreferrer">AWS AgentCore Code Interpreter</a>
+            <span class="tier-label">Tier 0</span>
+            <h3>Embedded and model-native code</h3>
+            <p>Small generated code, data transforms, notebook-like cells, and capability-limited functions inside the model loop.</p>
+            <div class="vendor-list">
+              <a class="vendor-item" href="https://pydantic.dev/articles/pydantic-monty" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">M</span>
+                <span class="vendor-text"><strong>Monty</strong><small>Capability-limited Python runtime</small></span>
+              </a>
+              <a class="vendor-item" href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/code-execution-tool" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">A</span>
+                <span class="vendor-text"><strong>Anthropic Code Execution</strong><small>Model-native execution tool</small></span>
+              </a>
+              <a class="vendor-item" href="https://platform.openai.com/docs/guides/tools-code-interpreter" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">O</span>
+                <span class="vendor-text"><strong>OpenAI Code Interpreter</strong><small>Hosted code interpreter surface</small></span>
+              </a>
+              <a class="vendor-item" href="https://ai.google.dev/gemini-api/docs/code-execution" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">G</span>
+                <span class="vendor-text"><strong>Gemini Code Execution</strong><small>Generated Python execution</small></span>
+              </a>
+              <a class="vendor-item" href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/code-interpreter-tool.html" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">AWS</span>
+                <span class="vendor-text"><strong>AWS AgentCore Code Interpreter</strong><small>AWS-native agent code tool</small></span>
+              </a>
+            </div>
           </article>
 
           <article>
-            <h3>Stateful agent computers</h3>
-            <p>Repo workspaces, services, installed packages, browser/session state, snapshots, and resumable coding tasks.</p>
-            <a href="https://www.daytona.io/" target="_blank" rel="noreferrer">Daytona</a>
-            <a href="https://www.runloop.ai/" target="_blank" rel="noreferrer">Runloop</a>
-            <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo</a>
-            <a href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">Tensorlake</a>
-            <a href="https://docs.docker.com/ai/sandboxes/" target="_blank" rel="noreferrer">Docker Sandboxes</a>
-            <a href="https://exe.dev/" target="_blank" rel="noreferrer">exe.dev</a>
-            <a href="https://sprites.dev/" target="_blank" rel="noreferrer">Fly Sprites</a>
+            <span class="tier-label">Tier 1</span>
+            <h3>Ephemeral sandboxes</h3>
+            <p>Generated scripts, tests, batch jobs, data tasks, and benchmark episodes that should start clean and leave evidence.</p>
+            <div class="vendor-list">
+              <a class="vendor-item" href="https://e2b.dev/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">E2B</span>
+                <span class="vendor-text"><strong>E2B</strong><small>AI-generated code in secure sandboxes</small></span>
+              </a>
+              <a class="vendor-item" href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">M</span>
+                <span class="vendor-text"><strong>Modal Sandboxes</strong><small>Compute scale, Python, GPU-adjacent work</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">CS</span>
+                <span class="vendor-text"><strong>ComputeSDK</strong><small>One API over sandbox providers</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/providers/vercel/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">V</span>
+                <span class="vendor-text"><strong>Vercel Sandbox</strong><small>Web-oriented AI code execution</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/providers/namespace/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">N</span>
+                <span class="vendor-text"><strong>Namespace</strong><small>Ephemeral container instances</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/providers/blaxel/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">B</span>
+                <span class="vendor-text"><strong>Blaxel</strong><small>Serverless AI compute</small></span>
+              </a>
+            </div>
           </article>
 
           <article>
-            <h3>Eval, RL, and observability</h3>
-            <p>Task definitions, rollout fan-out, reward functions, benchmark harnesses, traces, and evidence capture.</p>
-            <a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Harbor</a>
-            <a href="https://modal.com/" target="_blank" rel="noreferrer">Modal</a>
-            <a href="https://huggingface.co/docs/trl/index" target="_blank" rel="noreferrer">Hugging Face TRL</a>
-            <a href="https://www.swebench.com/" target="_blank" rel="noreferrer">SWE-bench</a>
-            <a href="https://www.tbench.ai/" target="_blank" rel="noreferrer">Terminal-Bench</a>
-            <a href="https://www.braintrust.dev/" target="_blank" rel="noreferrer">Braintrust</a>
-            <a href="https://www.langchain.com/langsmith" target="_blank" rel="noreferrer">LangSmith</a>
-            <a href="https://langfuse.com/" target="_blank" rel="noreferrer">Langfuse</a>
+            <span class="tier-label">Tier 2</span>
+            <h3>Stateful agent workspaces</h3>
+            <p>Repo checkouts, package installs, services, browser/session state, snapshots, resume, and multi-hour coding work.</p>
+            <div class="vendor-list">
+              <a class="vendor-item" href="https://www.daytona.io/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">D</span>
+                <span class="vendor-text"><strong>Daytona</strong><small>Stateful sandboxes and agent workspaces</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.runloop.ai/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">R</span>
+                <span class="vendor-text"><strong>Runloop</strong><small>Devboxes for coding agents</small></span>
+              </a>
+              <a class="vendor-item" href="https://islo.dev/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">I</span>
+                <span class="vendor-text"><strong>Islo</strong><small>Persistent isolated agent environments</small></span>
+              </a>
+              <a class="vendor-item" href="https://docs.docker.com/ai/sandboxes/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">Dk</span>
+                <span class="vendor-text"><strong>Docker Sandboxes</strong><small>Local/enterprise AI coding isolation</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.tensorlake.ai/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">T</span>
+                <span class="vendor-text"><strong>Tensorlake</strong><small>Stateful microVM and orchestration stack</small></span>
+              </a>
+              <a class="vendor-item" href="https://exe.dev/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">ex</span>
+                <span class="vendor-text"><strong>exe.dev</strong><small>Persistent Linux computers for agents</small></span>
+              </a>
+              <a class="vendor-item" href="https://sprites.dev/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">F</span>
+                <span class="vendor-text"><strong>Fly Sprites</strong><small>Stateful agent runtime pattern</small></span>
+              </a>
+            </div>
           </article>
 
           <article>
+            <span class="tier-label">Tier 3</span>
+            <h3>Eval, RL, and benchmark planes</h3>
+            <p>Task definitions, rollout fan-out, reward functions, raw logs, artifacts, traces, and reproducible scorekeeping.</p>
+            <div class="vendor-list">
+              <a class="vendor-item" href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">H</span>
+                <span class="vendor-text"><strong>Harbor</strong><small>Agent eval and rollout harness</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">CS</span>
+                <span class="vendor-text"><strong>ComputeSDK Benchmarks</strong><small>Daily sandbox/provider performance data</small></span>
+              </a>
+              <a class="vendor-item" href="https://modal.com/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">M</span>
+                <span class="vendor-text"><strong>Modal</strong><small>Parallel rollout and compute substrate</small></span>
+              </a>
+              <a class="vendor-item" href="https://huggingface.co/docs/trl/index" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">TRL</span>
+                <span class="vendor-text"><strong>Hugging Face TRL</strong><small>Post-training algorithm layer</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.swebench.com/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">SW</span>
+                <span class="vendor-text"><strong>SWE-bench</strong><small>Software engineering benchmark</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.tbench.ai/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">TB</span>
+                <span class="vendor-text"><strong>Terminal-Bench</strong><small>Terminal task benchmark</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.braintrust.dev/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">B</span>
+                <span class="vendor-text"><strong>Braintrust</strong><small>Eval and trace management</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.langchain.com/langsmith" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">LS</span>
+                <span class="vendor-text"><strong>LangSmith</strong><small>Trace and evaluation workflows</small></span>
+              </a>
+              <a class="vendor-item" href="https://langfuse.com/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">Lf</span>
+                <span class="vendor-text"><strong>Langfuse</strong><small>Open-source LLM observability</small></span>
+              </a>
+            </div>
+          </article>
+
+          <article>
+            <span class="tier-label">Control</span>
             <h3>CI, brokers, and orchestration</h3>
             <p>Generated PR validation, ephemeral runners, provider routing, durable workflows, retries, and approval gates.</p>
-            <a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox</a>
-            <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Crabbox repo</a>
-            <a href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">Actions Runner Controller</a>
-            <a href="https://temporal.io/" target="_blank" rel="noreferrer">Temporal</a>
-            <a href="https://www.inngest.com/" target="_blank" rel="noreferrer">Inngest</a>
-            <a href="https://trigger.dev/" target="_blank" rel="noreferrer">Trigger.dev</a>
-            <a href="https://dagster.io/" target="_blank" rel="noreferrer">Dagster</a>
-            <a href="https://www.prefect.io/" target="_blank" rel="noreferrer">Prefect</a>
-            <a href="https://argo-workflows.readthedocs.io/" target="_blank" rel="noreferrer">Argo Workflows</a>
-            <a href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">Kubernetes Agent Sandbox</a>
+            <div class="vendor-list">
+              <a class="vendor-item" href="https://crabbox.sh/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">C</span>
+                <span class="vendor-text"><strong>Crabbox</strong><small>Broker across sandbox backends</small></span>
+              </a>
+              <a class="vendor-item" href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">gh</span>
+                <span class="vendor-text"><strong>Crabbox repo</strong><small>Canonical source repository</small></span>
+              </a>
+              <a class="vendor-item" href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">ARC</span>
+                <span class="vendor-text"><strong>Actions Runner Controller</strong><small>Autoscaled GitHub runners</small></span>
+              </a>
+              <a class="vendor-item" href="https://temporal.io/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">T</span>
+                <span class="vendor-text"><strong>Temporal</strong><small>Durable workflow state</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.inngest.com/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">In</span>
+                <span class="vendor-text"><strong>Inngest</strong><small>Evented durable functions</small></span>
+              </a>
+              <a class="vendor-item" href="https://trigger.dev/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">Tr</span>
+                <span class="vendor-text"><strong>Trigger.dev</strong><small>Background jobs and automation</small></span>
+              </a>
+              <a class="vendor-item" href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">K8s</span>
+                <span class="vendor-text"><strong>Kubernetes Agent Sandbox</strong><small>Kubernetes-native agent runtime API</small></span>
+              </a>
+            </div>
           </article>
 
           <article>
-            <h3>Additional sandboxes to watch</h3>
-            <p>Emerging or adjacent runtime providers worth testing with the same benchmark protocol before inclusion in defaults.</p>
-            <a href="https://podflare.ai/" target="_blank" rel="noreferrer">Podflare</a>
-            <a href="https://sandbox0.ai/" target="_blank" rel="noreferrer">Sandbox0</a>
-            <a href="https://northflank.com/product/sandboxes" target="_blank" rel="noreferrer">Northflank Sandboxes</a>
-            <a href="https://instavm.io/" target="_blank" rel="noreferrer">InstaVM</a>
-            <a href="https://shuru.run/" target="_blank" rel="noreferrer">shuru</a>
-            <a href="https://www.noid.one/" target="_blank" rel="noreferrer">Noid</a>
+            <span class="tier-label">Watchlist</span>
+            <h3>Adjacent sandbox providers</h3>
+            <p>Promising or specialized providers to test under the same benchmark protocol before promoting into defaults.</p>
+            <div class="vendor-list">
+              <a class="vendor-item" href="https://podflare.ai/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">P</span>
+                <span class="vendor-text"><strong>Podflare</strong><small>Sandbox provider candidate</small></span>
+              </a>
+              <a class="vendor-item" href="https://sandbox0.ai/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">S0</span>
+                <span class="vendor-text"><strong>Sandbox0</strong><small>AI sandbox provider candidate</small></span>
+              </a>
+              <a class="vendor-item" href="https://northflank.com/product/sandboxes" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">Nf</span>
+                <span class="vendor-text"><strong>Northflank Sandboxes</strong><small>Cloud sandbox product</small></span>
+              </a>
+              <a class="vendor-item" href="https://instavm.io/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">IV</span>
+                <span class="vendor-text"><strong>InstaVM</strong><small>VM-oriented runtime candidate</small></span>
+              </a>
+              <a class="vendor-item" href="https://shuru.run/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">sr</span>
+                <span class="vendor-text"><strong>shuru</strong><small>Sandbox/runtime candidate</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.noid.one/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">No</span>
+                <span class="vendor-text"><strong>Noid</strong><small>Agent runtime candidate</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/providers/hopx/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">Hx</span>
+                <span class="vendor-text"><strong>Hopx</strong><small>MicroVM sandbox provider</small></span>
+              </a>
+              <a class="vendor-item" href="https://www.computesdk.com/providers/codesandbox/" target="_blank" rel="noreferrer">
+                <span class="vendor-mark">CSB</span>
+                <span class="vendor-text"><strong>CodeSandbox</strong><small>Cloud development sandboxes</small></span>
+              </a>
+            </div>
           </article>
         </div>
       </section>
@@ -425,6 +578,11 @@
                 <td>Crabbox</td>
                 <td>Open-source broker; spend comes from leased provider capacity and operations.</td>
                 <td><a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Docs</a> <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Repo</a></td>
+              </tr>
+              <tr>
+                <td>ComputeSDK</td>
+                <td>Abstraction layer; cost depends on chosen provider. Use benchmarks to compare cold start, throughput, and reliability.</td>
+                <td><a href="https://www.computesdk.com/" target="_blank" rel="noreferrer">Site</a> <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">Benchmarks</a></td>
               </tr>
               <tr>
                 <td>E2B</td>
@@ -502,6 +660,7 @@
         </div>
         <div class="method-links">
           <a href="BENCHMARKS.md">Benchmark protocol</a>
+          <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK benchmarks</a>
           <a href="PROMPT.md">Prompt provenance</a>
           <a href="AGENTS.md">Agent instructions</a>
           <a href="LAUNCH.md">Launch notes</a>
@@ -521,6 +680,7 @@
     <footer class="footer">
       <p>AI Sandbox Landscape. Public-info baseline. Verify before production use.</p>
       <p>Seeded with Codex on May 15, 2026. Public repo: <a href="https://github.com/zozo123/sandbox-landscape">github.com/zozo123/sandbox-landscape</a>.</p>
+      <p>External benchmark reference: <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK sandbox benchmarks</a>.</p>
       <p>Disclosure: As of May 16, 2026, Yossi Eliaz is part of <a href="https://www.incredibuild.com/" target="_blank" rel="noreferrer">Incredibuild</a> and was a founding member of <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo.dev</a>.</p>
     </footer>
 

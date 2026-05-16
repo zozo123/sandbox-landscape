@@ -66,6 +66,8 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
   than a full agent workspace.
 - Keep emerging vendors in the watchlist until they have public evidence,
   benchmark coverage, and a clear workload fit.
+- Keep the ComputeSDK benchmarks link visible as an external benchmark
+  reference, not as this repo's own measurement.
 - Keep cost signals conservative. Prefer linking to public pricing pages over
   embedding fragile exact numbers. If exact numbers are shown, verify them
   against public pricing pages and update the date-sensitive language.
