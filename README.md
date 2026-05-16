@@ -71,6 +71,8 @@ The website includes official links and public cost signals for the products, do
 
 Cost notes are snapshots from public pricing pages. Recheck pricing before using the site for vendor selection or benchmarks.
 
+The page also links to [officialskills.sh](https://officialskills.sh/) as an adjacent agent-skills registry. This repo is focused on execution boundaries and sandbox infrastructure, not skill packaging.
+
 ## GitHub Pages
 
 The workflow in `.github/workflows/pages.yml` deploys the static site from the repository root.

@@ -15,7 +15,7 @@
     >
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#050605">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -62,34 +62,67 @@
             </div>
           </div>
 
-          <aside class="hero-console" aria-label="Sandbox routing console">
-            <div class="console-top">
-              <span aria-hidden="true"></span>
-              <strong>sandbox.landscape</strong>
-              <em>readonly</em>
-            </div>
-            <div class="console-body">
-              <p><span>:</span>set workload=rl_rollout episodes=10k reset=clean</p>
-              <p><span>:</span>route Harbor+Modal --collect rewards,logs,artifacts</p>
-              <p><span>:</span>set workload=prod_generated_code risk=untrusted</p>
-              <p><span>:</span>require microvm,egress_policy,secret_proxy,kill_switch</p>
-              <div class="console-graph" aria-hidden="true">
-                <span>model</span>
-                <i></i>
-                <span>router</span>
-                <i></i>
-                <span>sandbox</span>
-                <i></i>
-                <span>evidence</span>
+          <div class="hero-side">
+            <aside class="quick-panel" aria-label="Landscape stats">
+              <div class="panel-title">Quick stats</div>
+              <dl>
+                <div>
+                  <dt>Runtime contracts</dt>
+                  <dd>4</dd>
+                </div>
+                <div>
+                  <dt>Execution roles</dt>
+                  <dd>6</dd>
+                </div>
+                <div>
+                  <dt>Provider links</dt>
+                  <dd>40+</dd>
+                </div>
+                <div>
+                  <dt>Benchmark references</dt>
+                  <dd>2</dd>
+                </div>
+              </dl>
+            </aside>
+
+            <aside class="hero-console" aria-label="Sandbox routing console">
+              <div class="console-top">
+                <span aria-hidden="true"></span>
+                <strong>sandbox.landscape</strong>
+                <em>readonly</em>
               </div>
-            </div>
-            <div class="status-line">
-              <span>NORMAL</span>
-              <span>execution-contract.md</span>
-              <span>technical</span>
-            </div>
-          </aside>
+              <div class="console-body">
+                <p><span>:</span>set workload=rl_rollout episodes=10k reset=clean</p>
+                <p><span>:</span>route Harbor+Modal --collect rewards,logs,artifacts</p>
+                <p><span>:</span>set workload=prod_generated_code risk=untrusted</p>
+                <p><span>:</span>require microvm,egress_policy,secret_proxy,kill_switch</p>
+                <div class="console-graph" aria-hidden="true">
+                  <span>model</span>
+                  <i></i>
+                  <span>router</span>
+                  <i></i>
+                  <span>sandbox</span>
+                  <i></i>
+                  <span>evidence</span>
+                </div>
+              </div>
+              <div class="status-line">
+                <span>NORMAL</span>
+                <span>execution-contract.md</span>
+                <span>technical</span>
+              </div>
+            </aside>
+          </div>
         </div>
+      </section>
+
+      <section class="registry-strip" aria-label="Related registries and evidence surfaces">
+        <span>Related registries:</span>
+        <a href="https://officialskills.sh/" target="_blank" rel="noreferrer">officialskills.sh</a>
+        <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK benchmarks</a>
+        <a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Harbor</a>
+        <a href="https://www.swebench.com/" target="_blank" rel="noreferrer">SWE-bench</a>
+        <a href="https://www.tbench.ai/" target="_blank" rel="noreferrer">Terminal-Bench</a>
       </section>
 
       <section class="principle">
@@ -657,10 +690,15 @@
             <h3>Evidence over positioning</h3>
             <p>Vendor claims are leads. Benchmark results need code, logs, artifacts, scoring rubrics, and failure notes.</p>
           </article>
+          <article>
+            <h3>Skills sit above runtimes</h3>
+            <p>Use agent-skill registries such as officialskills.sh as adjacent context; this page maps where those skills execute and how the execution is controlled.</p>
+          </article>
         </div>
         <div class="method-links">
           <a href="BENCHMARKS.md">Benchmark protocol</a>
           <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK benchmarks</a>
+          <a href="https://officialskills.sh/" target="_blank" rel="noreferrer">officialskills.sh</a>
           <a href="PROMPT.md">Prompt provenance</a>
           <a href="AGENTS.md">Agent instructions</a>
           <a href="LAUNCH.md">Launch notes</a>
@@ -680,7 +718,7 @@
     <footer class="footer">
       <p>AI Sandbox Landscape. Public-info baseline. Verify before production use.</p>
       <p>Seeded with Codex on May 15, 2026. Public repo: <a href="https://github.com/zozo123/sandbox-landscape">github.com/zozo123/sandbox-landscape</a>.</p>
-      <p>External benchmark reference: <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK sandbox benchmarks</a>.</p>
+      <p>External references: <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK sandbox benchmarks</a> and <a href="https://officialskills.sh/" target="_blank" rel="noreferrer">officialskills.sh</a>.</p>
       <p>Disclosure: As of May 16, 2026, Yossi Eliaz is part of <a href="https://www.incredibuild.com/" target="_blank" rel="noreferrer">Incredibuild</a> and was a founding member of <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo.dev</a>.</p>
     </footer>
 

@@ -68,15 +68,19 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
   benchmark coverage, and a clear workload fit.
 - Keep the ComputeSDK benchmarks link visible as an external benchmark
   reference, not as this repo's own measurement.
+- Keep the officialskills.sh link visible as an adjacent agent-skills registry,
+  not as a sandbox benchmark or vendor ranking.
 - Keep cost signals conservative. Prefer linking to public pricing pages over
   embedding fragile exact numbers. If exact numbers are shown, verify them
   against public pricing pages and update the date-sensitive language.
 
 ## Visual Direction
 
-- Keep the site slim, mostly white, and research-oriented.
-- Use low-level systems cues: Vim-like command text, monospace labels, status
-  lines, precise borders, and execution diagrams.
+- Keep the site slim, dark, and research-oriented, with a registry feel inspired
+  by terminal directories such as officialskills.sh. Do not copy their assets or
+  scrape their directory; link to it as an adjacent reference.
+- Use low-level systems cues: Vim-like command text, monospace labels, compact
+  stats, status lines, precise borders, and execution diagrams.
 - Avoid generic SaaS hero styling, heavy gradients, decorative blobs, or
   marketing copy. The page should feel like a clear technical note with a
   polished console surface.

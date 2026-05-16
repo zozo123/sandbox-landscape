@@ -41,6 +41,8 @@ The repo is intentionally early and based on public information. I plan to updat
 
 I also added official links and public cost signals for the tools mentioned, so corrections can point to vendor pages, pricing pages, docs, or canonical repos rather than screenshots or private claims.
 
+The UI uses a compact terminal-directory style and links to officialskills.sh as an adjacent agent-skills registry; this repo is about sandbox execution boundaries.
+
 I would especially value corrections, missing projects, and real-world experience from people running evals, agent CI, stateful coding agents, RL rollout infrastructure, or production sandboxing for generated code.
 ```
 
@@ -62,6 +64,7 @@ Future benchmarks will disclose sources, prompts, agents/models used, harnesses,
 - `AGENTS.md` gives future agents a compact context brief.
 - Website includes official links for each mentioned solution.
 - Website includes public pricing/cost links for the major solutions.
+- Website includes officialskills.sh as an adjacent registry reference.
 - LinkedIn contact URL is correct: https://www.linkedin.com/in/yossi-eliaz
 - HN first comment is pasted after submission.
 
