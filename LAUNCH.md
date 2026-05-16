@@ -33,7 +33,7 @@ https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fzozo123.github.io%2Fsand
 ```text
 I made this because the recurring question "which sandbox should we use for agents?" is usually underspecified.
 
-The framing here is that teams are not buying one sandbox. They are buying an execution contract: what may run, what persists, what is measured, and what can be stopped. The guarantees are isolation, reset semantics, state, scale, credential control, GitHub/CI integration, orchestration, and evidence capture.
+The framing here is that teams are not buying one sandbox. They should choose the execution contract first: permissions, isolation, reset semantics, state, scale, credential boundaries, evidence capture, and stop conditions. The vendor/runtime choice comes after that.
 
 The site is written for technical people comparing eval harnesses, RL/post-training rollout environments, generated-code execution, PR validation, persistent agent workspaces, and production-adjacent sandboxes.
 

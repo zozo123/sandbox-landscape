@@ -22,8 +22,8 @@ Core thesis:
 
 ```text
 You are not buying a sandbox.
-You are buying an execution contract:
-what may run, what persists, what is measured, and what can be stopped.
+Choose the execution contract first:
+permissions, isolation, reset, state, scale, secrets, evidence, and stop conditions.
 ```
 
 The main workload dimensions are:

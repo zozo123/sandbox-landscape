@@ -6,12 +6,12 @@
     <title>AI Sandbox Landscape</title>
     <meta
       name="description"
-      content="A technical public-info guide to choosing execution boundaries for AI-generated code, evals, RL rollouts, post-training environments, CI validation, and production-adjacent agents."
+      content="A technical public-info guide to choosing AI sandbox infrastructure by execution contract: permissions, isolation, reset, state, scale, secrets, evidence, and stop conditions."
     >
     <meta property="og:title" content="AI Sandbox Landscape">
     <meta
       property="og:description"
-      content="Choose AI sandbox infrastructure by execution contract: permissions, isolation, reset semantics, state, scale, secrets, CI integration, and evidence capture."
+      content="Choose the execution contract first: permissions, isolation, reset semantics, state, scale, secrets, evidence, and stop conditions."
     >
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -45,11 +45,12 @@
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-copy">
-            <p class="kicker">Sandboxes, workspaces, and control planes</p>
-            <h1>AI agents need execution contracts.</h1>
+            <p class="kicker">AI Sandbox Landscape</p>
+            <h1>Choose the execution contract first.</h1>
             <p class="lede">
-              Before choosing a vendor, define what code may run, what resets, what state survives,
-              how it scales, where secrets live, and what evidence comes back.
+              For AI-generated code, the hard question is not which vendor. It is what the
+              agent may do, what resets, what persists, how work fans out, where secrets live,
+              and what evidence comes back.
             </p>
             <div class="hero-meta" aria-label="Research scope">
               <span>Updated May 16, 2026</span>
@@ -130,23 +131,24 @@
       <section class="principle">
         <div>
           <span>Thesis</span>
-          <strong>A sandbox is not the goal. The goal is an execution contract that lets AI act, be measured, and be stopped.</strong>
+          <strong>The sandbox is the mechanism. The contract is the decision: permissions, isolation, reset, state, scale, secrets, evidence, and stop conditions.</strong>
         </div>
         <ul>
-          <li>What code is allowed to execute?</li>
-          <li>What must be reset between runs?</li>
-          <li>What state must survive?</li>
-          <li>Can secrets stay outside the sandbox?</li>
-          <li>Can you score logs, diffs, artifacts, and rewards?</li>
-          <li>Who owns rollback, timeout, and kill?</li>
+          <li>What can the agent execute?</li>
+          <li>What network or tools can it reach?</li>
+          <li>What resets after each run?</li>
+          <li>What state is allowed to persist?</li>
+          <li>Where do credentials stay?</li>
+          <li>What logs, diffs, artifacts, or rewards prove the outcome?</li>
+          <li>Who owns timeout, kill, and rollback?</li>
         </ul>
       </section>
 
       <section class="section atlas-section" id="atlas" aria-labelledby="atlas-title">
         <div class="section-heading">
           <p class="kicker">Execution atlas</p>
-          <h2 id="atlas-title">Route the workload before picking a runtime.</h2>
-          <p>Each path starts with code risk and ends with evidence. The useful question is not “which sandbox?” but which control loop, reset policy, state model, and artifact trail the workload needs.</p>
+          <h2 id="atlas-title">Route the contract before picking a runtime.</h2>
+          <p>Each path starts with code risk and ends with evidence. The useful question is not “which sandbox?” but which policy, reset model, state boundary, control loop, and artifact trail the workload needs.</p>
         </div>
 
         <div class="atlas-shell">
@@ -202,7 +204,7 @@
       <section class="section compact-section" id="runtime-shapes" aria-labelledby="runtime-shapes-title">
         <div class="section-heading">
           <p class="kicker">Runtime shapes</p>
-          <h2 id="runtime-shapes-title">Four execution contracts before vendors.</h2>
+          <h2 id="runtime-shapes-title">Four contract shapes, then vendors.</h2>
           <p>Classify the boundary first. Vendor choice is secondary to what the workload needs from isolation, reset, state, orchestration, and evidence.</p>
         </div>
 
@@ -237,8 +239,8 @@
       <section class="section" id="use-cases" aria-labelledby="use-cases-title">
         <div class="section-heading">
           <p class="kicker">Use cases</p>
-          <h2 id="use-cases-title">Start from the execution contract.</h2>
-          <p>The mistake is treating “sandbox” as one thing. Eval tasks, RL episodes, production-generated code, and multi-hour coding agents have different failure modes.</p>
+          <h2 id="use-cases-title">Map workload to contract shape.</h2>
+          <p>“Sandbox” is overloaded. Inline code, evals, RL episodes, PR validation, long agent tasks, and production-generated code need different contracts.</p>
         </div>
 
         <div class="use-case-grid">
@@ -278,7 +280,7 @@
       <section class="section" id="matrix" aria-labelledby="matrix-title">
         <div class="section-heading">
           <p class="kicker">Decision matrix</p>
-          <h2 id="matrix-title">Workload to default choice.</h2>
+          <h2 id="matrix-title">Workload to default contract.</h2>
         </div>
 
         <div class="matrix-controls" aria-label="Matrix controls">

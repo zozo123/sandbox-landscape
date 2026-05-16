@@ -6,8 +6,8 @@ The central claim:
 
 ```text
 You are not buying a sandbox.
-You are buying an execution contract:
-what may run, what persists, what is measured, and what can be stopped.
+Choose the execution contract first:
+permissions, isolation, reset, state, scale, secrets, evidence, and stop conditions.
 ```
 
 For each workload, ask:
