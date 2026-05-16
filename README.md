@@ -40,6 +40,8 @@ http://localhost:8000
 
 ```text
 index.html                 Static website
+og-image.html              Source for the generated social preview image
+og-image.png               Open Graph / LinkedIn / Twitter preview image
 styles.css                 Site styling
 script.js                  Matrix filtering and execution atlas canvas
 DESIGN.md                  Visual philosophy and accessibility notes
@@ -80,6 +82,8 @@ The repo includes local `.agents/skills` installs for accessibility, canvas-desi
 ## GitHub Pages
 
 The workflow in `.github/workflows/pages.yml` deploys the static site from the repository root.
+
+When changing the social preview, update `og-image.html`, regenerate `og-image.png`, and verify the deployed `og:image` metadata.
 
 After pushing to `main`, enable GitHub Pages in the repository settings if GitHub has not enabled it automatically:
 

@@ -101,6 +101,8 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
 
 ```text
 index.html                  Main static site
+og-image.html               Source for the generated social preview image
+og-image.png                Open Graph / LinkedIn / Twitter preview image
 styles.css                  Site layout and visual design
 script.js                   Matrix filtering and execution atlas canvas
 DESIGN.md                   Design philosophy and canvas/accessibility notes
