@@ -63,6 +63,17 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
   embedding fragile exact numbers. If exact numbers are shown, verify them
   against public pricing pages and update the date-sensitive language.
 
+## Visual Direction
+
+- Keep the site slim, mostly white, and research-oriented.
+- Use low-level systems cues: Vim-like command text, monospace labels, status
+  lines, precise borders, and execution diagrams.
+- Avoid generic SaaS hero styling, heavy gradients, decorative blobs, or
+  marketing copy. The page should feel like a clear technical note with a
+  polished console surface.
+- Preserve the runtime-shape framing before the vendor lists: micro runtime,
+  ephemeral task sandbox, persistent agent computer, and control plane.
+
 ## Files
 
 ```text

@@ -29,6 +29,7 @@
           <span>AI Sandbox Landscape</span>
         </a>
         <div class="nav-links">
+          <a href="#runtime-shapes">Runtime</a>
           <a href="#use-cases">Use cases</a>
           <a href="#matrix">Matrix</a>
           <a href="#solutions">Solutions</a>
@@ -41,21 +42,53 @@
 
     <main id="top">
       <section class="hero">
-        <p class="kicker">Public-info guide for agent infrastructure</p>
-        <h1>Choose sandboxes by workload, not vendor category.</h1>
-        <p class="lede">
-          A compact landscape for evals, GitHub Actions, post-training/RL rollouts,
-          long-running coding agents, browser tasks, and production-adjacent automation.
-        </p>
-        <div class="hero-meta" aria-label="Research scope">
-          <span>Updated May 16, 2026</span>
-          <span>Public sources only</span>
-          <span>Agent disclosure required</span>
-        </div>
-        <div class="hero-actions" aria-label="Primary actions">
-          <a class="button primary" href="#use-cases">Start with use cases</a>
-          <a class="button" href="#solutions">Compare solutions</a>
-          <a class="button" href="#costs">See public cost signals</a>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="kicker">Public-info guide for agent infrastructure</p>
+            <h1>Choose sandboxes by workload, not vendor category.</h1>
+            <p class="lede">
+              A compact landscape for evals, GitHub Actions, post-training/RL rollouts,
+              long-running coding agents, browser tasks, and production-adjacent automation.
+            </p>
+            <div class="hero-meta" aria-label="Research scope">
+              <span>Updated May 16, 2026</span>
+              <span>Public sources only</span>
+              <span>Agent disclosure required</span>
+            </div>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button primary" href="#use-cases">Start with use cases</a>
+              <a class="button" href="#solutions">Compare solutions</a>
+              <a class="button" href="#costs">Cost signals</a>
+            </div>
+          </div>
+
+          <aside class="hero-console" aria-label="Sandbox routing console">
+            <div class="console-top">
+              <span aria-hidden="true"></span>
+              <strong>sandbox.landscape</strong>
+              <em>readonly</em>
+            </div>
+            <div class="console-body">
+              <p><span>:</span>set workload=evals state=ephemeral scale=high</p>
+              <p><span>:</span>route Harbor+Modal --capture logs,diffs,scores</p>
+              <p><span>:</span>set workload=agent_task state=persistent risk=high</p>
+              <p><span>:</span>route Daytona|Runloop|Islo --policy network,secrets,audit</p>
+              <div class="console-graph" aria-hidden="true">
+                <span>prompt</span>
+                <i></i>
+                <span>router</span>
+                <i></i>
+                <span>sandbox</span>
+                <i></i>
+                <span>evidence</span>
+              </div>
+            </div>
+            <div class="status-line">
+              <span>NORMAL</span>
+              <span>public-info.md</span>
+              <span>6 classes</span>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -71,6 +104,41 @@
           <li>Does it need CI, GPU, RL, or orchestration?</li>
           <li>Can you capture logs, diffs, artifacts, and scores?</li>
         </ul>
+      </section>
+
+      <section class="section compact-section" id="runtime-shapes" aria-labelledby="runtime-shapes-title">
+        <div class="section-heading">
+          <p class="kicker">Runtime shapes</p>
+          <h2 id="runtime-shapes-title">Four categories before vendors.</h2>
+          <p>Classify the work first. The right vendor choice usually falls out of duration, state, risk, and evidence requirements.</p>
+        </div>
+
+        <div class="runtime-map" aria-label="Sandbox category map">
+          <article>
+            <span class="node-label">01</span>
+            <h3>Micro runtime</h3>
+            <p>Small code in the model loop. Fast, stateless, low operational surface.</p>
+            <code>WASM / code tool / interpreter</code>
+          </article>
+          <article>
+            <span class="node-label">02</span>
+            <h3>Ephemeral task sandbox</h3>
+            <p>One job, clean reset, logs and artifacts. Best default for evals and CI-like tasks.</p>
+            <code>E2B / Modal / Docker / Harbor</code>
+          </article>
+          <article>
+            <span class="node-label">03</span>
+            <h3>Persistent agent computer</h3>
+            <p>Installed packages, repo state, browser/session context, resumable work.</p>
+            <code>Daytona / Runloop / Islo / exe.dev</code>
+          </article>
+          <article>
+            <span class="node-label">04</span>
+            <h3>Control plane</h3>
+            <p>Retries, fan-out, snapshots, approvals, provider routing, and score collection.</p>
+            <code>Temporal / ARC / Crabbox / Tensorlake</code>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="use-cases" aria-labelledby="use-cases-title">
