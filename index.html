@@ -6,12 +6,12 @@
     <title>AI Sandbox Landscape</title>
     <meta
       name="description"
-      content="A concise public-info guide to choosing AI agent sandboxes by workload: evals, CI, RL rollouts, long-running agents, browser tasks, and production-adjacent automation."
+      content="A technical public-info guide to choosing execution boundaries for AI-generated code, evals, RL rollouts, post-training environments, CI validation, and production-adjacent agents."
     >
     <meta property="og:title" content="AI Sandbox Landscape">
     <meta
       property="og:description"
-      content="Choose AI agent sandboxes by execution guarantees: state, scale, security, cost, CI integration, and evidence capture."
+      content="Choose agent sandboxes by execution guarantees: isolation, reset semantics, state, scale, secrets, CI integration, and evidence capture."
     >
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -44,16 +44,16 @@
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-copy">
-            <p class="kicker">Public-info guide for agent infrastructure</p>
+            <p class="kicker">Execution boundaries for generated code</p>
             <h1>Choose sandboxes by workload, not vendor category.</h1>
             <p class="lede">
-              A compact landscape for evals, GitHub Actions, post-training/RL rollouts,
-              long-running coding agents, browser tasks, and production-adjacent automation.
+              A technical map for eval harnesses, RL/post-training rollouts, CI validation,
+              generated-code execution, long-running coding agents, and production-adjacent automation.
             </p>
             <div class="hero-meta" aria-label="Research scope">
               <span>Updated May 16, 2026</span>
               <span>Public sources only</span>
-              <span>Agent disclosure required</span>
+              <span>AI-generated baseline</span>
             </div>
             <div class="hero-actions" aria-label="Primary actions">
               <a class="button primary" href="#use-cases">Start with use cases</a>
@@ -69,12 +69,12 @@
               <em>readonly</em>
             </div>
             <div class="console-body">
-              <p><span>:</span>set workload=evals state=ephemeral scale=high</p>
-              <p><span>:</span>route Harbor+Modal --capture logs,diffs,scores</p>
-              <p><span>:</span>set workload=agent_task state=persistent risk=high</p>
-              <p><span>:</span>route Daytona|Runloop|Islo --policy network,secrets,audit</p>
+              <p><span>:</span>set workload=rl_rollout episodes=10k reset=clean</p>
+              <p><span>:</span>route Harbor+Modal --collect rewards,logs,artifacts</p>
+              <p><span>:</span>set workload=prod_generated_code risk=untrusted</p>
+              <p><span>:</span>require microvm,egress_policy,secret_proxy,kill_switch</p>
               <div class="console-graph" aria-hidden="true">
-                <span>prompt</span>
+                <span>model</span>
                 <i></i>
                 <span>router</span>
                 <i></i>
@@ -85,8 +85,8 @@
             </div>
             <div class="status-line">
               <span>NORMAL</span>
-              <span>public-info.md</span>
-              <span>6 classes</span>
+              <span>execution-contract.md</span>
+              <span>technical</span>
             </div>
           </aside>
         </div>
@@ -98,45 +98,46 @@
           <strong>You are not buying a sandbox. You are buying execution guarantees.</strong>
         </div>
         <ul>
-          <li>How dangerous is the code?</li>
-          <li>How long does it run?</li>
-          <li>Does state need to survive?</li>
-          <li>Does it need CI, GPU, RL, or orchestration?</li>
-          <li>Can you capture logs, diffs, artifacts, and scores?</li>
+          <li>What code is allowed to execute?</li>
+          <li>What must be reset between runs?</li>
+          <li>What state must survive?</li>
+          <li>Can secrets stay outside the sandbox?</li>
+          <li>Can you score logs, diffs, artifacts, and rewards?</li>
+          <li>Who owns rollback, timeout, and kill?</li>
         </ul>
       </section>
 
       <section class="section compact-section" id="runtime-shapes" aria-labelledby="runtime-shapes-title">
         <div class="section-heading">
           <p class="kicker">Runtime shapes</p>
-          <h2 id="runtime-shapes-title">Four categories before vendors.</h2>
-          <p>Classify the work first. The right vendor choice usually falls out of duration, state, risk, and evidence requirements.</p>
+          <h2 id="runtime-shapes-title">Four execution contracts before vendors.</h2>
+          <p>Classify the boundary first. Vendor choice is secondary to what the workload needs from isolation, reset, state, orchestration, and evidence.</p>
         </div>
 
         <div class="runtime-map" aria-label="Sandbox category map">
           <article>
             <span class="node-label">01</span>
-            <h3>Micro runtime</h3>
-            <p>Small code in the model loop. Fast, stateless, low operational surface.</p>
-            <code>WASM / code tool / interpreter</code>
+            <h3>Embedded micro runtime</h3>
+            <p>Small generated programs inside your agent loop. Start with no filesystem, no network, and explicit host-provided functions.</p>
+            <code>Monty / WASM / model-native code tools</code>
           </article>
           <article>
             <span class="node-label">02</span>
             <h3>Ephemeral task sandbox</h3>
-            <p>One job, clean reset, logs and artifacts. Best default for evals and CI-like tasks.</p>
-            <code>E2B / Modal / Docker / Harbor</code>
+            <p>Run generated Python, notebooks, tests, or one benchmark task with clean reset, logs, files, and bounded lifetime.</p>
+            <code>E2B / Modal / model code interpreters</code>
           </article>
           <article>
             <span class="node-label">03</span>
-            <h3>Persistent agent computer</h3>
-            <p>Installed packages, repo state, browser/session context, resumable work.</p>
-            <code>Daytona / Runloop / Islo / exe.dev</code>
+            <h3>Persistent agent workspace</h3>
+            <p>Give the agent a real computer: repo checkout, packages, services, browser state, partial work, snapshots, and resume.</p>
+            <code>Daytona / Runloop / Islo / Docker / exe.dev</code>
           </article>
           <article>
             <span class="node-label">04</span>
-            <h3>Control plane</h3>
-            <p>Retries, fan-out, snapshots, approvals, provider routing, and score collection.</p>
-            <code>Temporal / ARC / Crabbox / Tensorlake</code>
+            <h3>Control and eval plane</h3>
+            <p>Fan out rollouts, hydrate repos, reset environments, capture evidence, score tasks, retry failures, and gate risky actions.</p>
+            <code>Harbor / Temporal / ARC / Crabbox / Tensorlake</code>
           </article>
         </div>
       </section>
@@ -144,40 +145,40 @@
       <section class="section" id="use-cases" aria-labelledby="use-cases-title">
         <div class="section-heading">
           <p class="kicker">Use cases</p>
-          <h2 id="use-cases-title">Start here.</h2>
-          <p>Most mistakes come from using a short-lived code interpreter where a stateful agent computer, broker, or durable workflow is actually needed.</p>
+          <h2 id="use-cases-title">Start from the execution contract.</h2>
+          <p>The mistake is treating “sandbox” as one thing. Eval tasks, RL episodes, production-generated code, and multi-hour coding agents have different failure modes.</p>
         </div>
 
         <div class="use-case-grid">
           <article>
             <span>01</span>
-            <h3>Small code and data analysis</h3>
-            <p>Use model-native code execution, WASM, E2B, or Modal when state is minimal and the task is short.</p>
+            <h3>Inline code in the model loop</h3>
+            <p>Use Monty, WASM, or model-native code tools when generated code should only call capabilities you explicitly expose.</p>
           </article>
           <article>
             <span>02</span>
             <h3>Agent evals and benchmarks</h3>
-            <p>Use Harbor plus Modal, Daytona, E2B, or Docker depending on scale, repo realism, and isolation needs.</p>
+            <p>Use Harbor with Docker, Modal, Daytona, or E2B when every run needs a task, reset policy, agent/model disclosure, logs, and a score.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>GitHub Actions and PR validation</h3>
-            <p>Use GitHub-hosted runners first, ARC for private autoscaling, and isolated sandboxes for AI-generated work.</p>
+            <h3>RL and post-training rollouts</h3>
+            <p>Use Modal plus Harbor/TRL-style reward loops when you need many parallel episodes, deterministic resets, and reward artifacts.</p>
           </article>
           <article>
             <span>04</span>
-            <h3>Long-running coding agents</h3>
-            <p>Use Daytona, Runloop, Islo, Tensorlake, or exe.dev when installed state, caches, logs, and partial work must survive.</p>
+            <h3>PR validation for generated code</h3>
+            <p>Use GitHub Actions, ARC, Docker Sandboxes, Daytona, or Crabbox when an AI patch needs tests without touching shared runners or host Docker.</p>
           </article>
           <article>
             <span>05</span>
-            <h3>RL rollouts and auto-spawning</h3>
-            <p>Use Modal and Harbor for rollout scale. Add Daytona, Tensorlake, or Crabbox when environments need state or provider routing.</p>
+            <h3>Long-running coding agents</h3>
+            <p>Use Daytona, Runloop, Islo, Docker Sandboxes, Tensorlake, or exe.dev when repo state, services, caches, logs, and partial work must survive.</p>
           </article>
           <article>
             <span>06</span>
-            <h3>Production-adjacent automation</h3>
-            <p>Use hardened stateful environments, credential boundaries, network policy, audit logs, and human approval gates.</p>
+            <h3>Production sandbox for generated code</h3>
+            <p>Use microVM/VM-backed sandboxes with network policy, credential proxying, audit logs, timeouts, kill switches, and human approval gates.</p>
           </article>
         </div>
       </section>
@@ -214,21 +215,21 @@
             </thead>
             <tbody id="matrix-body">
               <tr data-tags="code interpreter wasm">
-                <td>Small code inside model loop</td>
+                <td>Inline generated code in model loop</td>
                 <td>No</td>
                 <td>Low</td>
                 <td>Medium</td>
                 <td>Monty / WASM / model-native code execution</td>
               </tr>
               <tr data-tags="code interpreter data analysis">
-                <td>Data analysis / code interpreter</td>
+                <td>Generated script / data analysis</td>
                 <td>Low</td>
                 <td>Medium</td>
                 <td>Medium</td>
                 <td>E2B / Modal / Anthropic / OpenAI / Gemini / AWS code tools</td>
               </tr>
               <tr data-tags="eval agent benchmark harbor modal daytona">
-                <td>Agent benchmark evals</td>
+                <td>Agent eval harness</td>
                 <td>No / medium</td>
                 <td>High</td>
                 <td>Medium / high</td>
@@ -283,6 +284,13 @@
                 <td>Medium / high</td>
                 <td>Modal + Harbor</td>
               </tr>
+              <tr data-tags="enterprise production generated code sandbox egress secrets microvm">
+                <td>Production sandbox for generated code</td>
+                <td>No / bounded</td>
+                <td>Medium / high</td>
+                <td>Very high</td>
+                <td>Docker Sandboxes / Islo / Runloop / Daytona + approvals</td>
+              </tr>
               <tr data-tags="rl stateful tensorlake daytona runloop fly sprites">
                 <td>Stateful RL environments</td>
                 <td>Yes</td>
@@ -326,13 +334,14 @@
       <section class="section" id="solutions" aria-labelledby="solutions-title">
         <div class="section-heading">
           <p class="kicker">Solutions</p>
-          <h2 id="solutions-title">Public links by role.</h2>
-          <p>These are links to product pages, docs, or canonical repos. They are starting points for research, not benchmark results.</p>
+          <h2 id="solutions-title">Public links by execution role.</h2>
+          <p>These links point to product pages, docs, or canonical repos. The labels are workload roles, not benchmark rankings.</p>
         </div>
 
         <div class="solution-grid">
           <article>
             <h3>Code execution</h3>
+            <p>Small generated code, data transforms, code-interpreter cells, and capability-limited functions.</p>
             <a href="https://pydantic.dev/articles/pydantic-monty" target="_blank" rel="noreferrer">Monty</a>
             <a href="https://e2b.dev/" target="_blank" rel="noreferrer">E2B</a>
             <a href="https://modal.com/products/sandboxes" target="_blank" rel="noreferrer">Modal Sandboxes</a>
@@ -344,6 +353,7 @@
 
           <article>
             <h3>Stateful agent computers</h3>
+            <p>Repo workspaces, services, installed packages, browser/session state, snapshots, and resumable coding tasks.</p>
             <a href="https://www.daytona.io/" target="_blank" rel="noreferrer">Daytona</a>
             <a href="https://www.runloop.ai/" target="_blank" rel="noreferrer">Runloop</a>
             <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo</a>
@@ -355,6 +365,7 @@
 
           <article>
             <h3>Eval, RL, and observability</h3>
+            <p>Task definitions, rollout fan-out, reward functions, benchmark harnesses, traces, and evidence capture.</p>
             <a href="https://github.com/harbor-framework/harbor" target="_blank" rel="noreferrer">Harbor</a>
             <a href="https://modal.com/" target="_blank" rel="noreferrer">Modal</a>
             <a href="https://huggingface.co/docs/trl/index" target="_blank" rel="noreferrer">Hugging Face TRL</a>
@@ -367,6 +378,7 @@
 
           <article>
             <h3>CI, brokers, and orchestration</h3>
+            <p>Generated PR validation, ephemeral runners, provider routing, durable workflows, retries, and approval gates.</p>
             <a href="https://crabbox.sh/" target="_blank" rel="noreferrer">Crabbox</a>
             <a href="https://github.com/openclaw/crabbox" target="_blank" rel="noreferrer">Crabbox repo</a>
             <a href="https://docs.github.com/en/actions/concepts/runners/actions-runner-controller" target="_blank" rel="noreferrer">Actions Runner Controller</a>
@@ -377,6 +389,17 @@
             <a href="https://www.prefect.io/" target="_blank" rel="noreferrer">Prefect</a>
             <a href="https://argo-workflows.readthedocs.io/" target="_blank" rel="noreferrer">Argo Workflows</a>
             <a href="https://agent-sandbox.sigs.k8s.io/docs/" target="_blank" rel="noreferrer">Kubernetes Agent Sandbox</a>
+          </article>
+
+          <article>
+            <h3>Additional sandboxes to watch</h3>
+            <p>Emerging or adjacent runtime providers worth testing with the same benchmark protocol before inclusion in defaults.</p>
+            <a href="https://podflare.ai/" target="_blank" rel="noreferrer">Podflare</a>
+            <a href="https://sandbox0.ai/" target="_blank" rel="noreferrer">Sandbox0</a>
+            <a href="https://northflank.com/product/sandboxes" target="_blank" rel="noreferrer">Northflank Sandboxes</a>
+            <a href="https://instavm.io/" target="_blank" rel="noreferrer">InstaVM</a>
+            <a href="https://shuru.run/" target="_blank" rel="noreferrer">shuru</a>
+            <a href="https://www.noid.one/" target="_blank" rel="noreferrer">Noid</a>
           </article>
         </div>
       </section>
@@ -466,7 +489,7 @@
         <div class="method-grid">
           <article>
             <h3>Public information only</h3>
-            <p>Use public docs, public repos, public product pages, changelogs, and reproducible experiments.</p>
+            <p>This page is AI-generated from public docs, public repos, public product pages, changelogs, and reproducible experiments.</p>
           </article>
           <article>
             <h3>Agent disclosure</h3>

@@ -447,7 +447,7 @@ h3 {
 }
 
 .runtime-map article {
-  min-height: 250px;
+  min-height: 292px;
   position: relative;
   padding: 18px;
   border-right: 1px solid var(--line);
@@ -650,11 +650,11 @@ tbody tr.is-hidden {
 }
 
 .solution-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .solution-grid article {
-  min-height: 260px;
+  min-height: 330px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -664,6 +664,12 @@ tbody tr.is-hidden {
   margin-bottom: 10px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
+}
+
+.solution-grid p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.91rem;
 }
 
 .solution-grid a,
@@ -845,7 +851,7 @@ tbody tr.is-hidden {
 
   .runtime-map article,
   .runtime-map article:nth-child(odd) {
-    min-height: 230px;
+    min-height: 260px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }

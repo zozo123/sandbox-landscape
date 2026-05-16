@@ -55,10 +55,17 @@ Do not load or rewrite everything unless the task truly requires it. Keep future
 - If a claim may have changed, verify it against public sources and include the date in the relevant benchmark or source note.
 - Separate measured behavior from vendor positioning.
 - Keep the tone sober, technical, and useful for Hacker News readers.
+- Write for technical readers making infrastructure decisions for evals,
+  RL/post-training rollouts, generated-code execution, PR validation, and
+  production-adjacent automation.
 - Keep official solution links on the website pointed at public vendor pages,
   documentation, or canonical open-source repositories.
 - Keep Crabbox represented as a broker/control-plane option, not just another
   sandbox runtime.
+- Keep Monty represented as an embedded, capability-limited micro runtime rather
+  than a full agent workspace.
+- Keep emerging vendors in the watchlist until they have public evidence,
+  benchmark coverage, and a clear workload fit.
 - Keep cost signals conservative. Prefer linking to public pricing pages over
   embedding fragile exact numbers. If exact numbers are shown, verify them
   against public pricing pages and update the date-sensitive language.

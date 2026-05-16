@@ -1,6 +1,6 @@
 # AI Sandbox Landscape
 
-A living static website for mapping AI agent sandbox choices across evals, GitHub Actions, post-training/RL rollouts, long-running coding agents, auto-healing workflows, and production-adjacent automation.
+A living static website for mapping AI agent sandbox choices across evals, GitHub Actions, post-training/RL rollouts, generated-code execution, long-running coding agents, auto-healing workflows, and production-adjacent automation.
 
 The central claim:
 
@@ -96,5 +96,5 @@ The Hacker News title, submit link, first comment, and checklist live in [LAUNCH
 For corrections, additions, or to be considered for inclusion, reach out on LinkedIn:
 
 ```text
-https://www.linkedin.com/in/yossi-eliaz/
+https://www.linkedin.com/in/zozo123/
 ```
