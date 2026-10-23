@@ -175,4 +175,4 @@ Keep the footer disclosure concise:
 Yossi Eliaz is Principal Engineer, AI Systems at Incredibuild / islo.dev and was a founding member of Islo.dev. Islo is one of the providers listed on this page.
 ```
 
-Keep the matrix disclosure under "Workload to default contract." and keep vendors in each matrix cell in alphabetical order.
+Keep the matrix disclosure under "Workload to default contract." and keep the sandbox providers in each matrix cell in alphabetical order.

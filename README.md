@@ -74,7 +74,7 @@ The website includes official links and public cost signals for the products, do
 
 Cost notes are snapshots from public pricing pages. Recheck pricing before using the site for vendor selection or benchmarks.
 
-Disclosure: the author works at Incredibuild / islo.dev, one of the providers listed. Vendors in each matrix cell are listed alphabetically.
+Disclosure: the author works at Incredibuild / islo.dev, one of the providers listed. Sandbox providers in each matrix cell are listed alphabetically.
 
 The page also links to [officialskills.sh](https://officialskills.sh/) as an adjacent agent-skills registry. This repo is focused on execution boundaries and sandbox infrastructure, not skill packaging.
 
