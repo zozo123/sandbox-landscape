@@ -109,7 +109,6 @@ DESIGN.md                   Design philosophy and canvas/accessibility notes
 README.md                   Repo overview and local/deploy instructions
 BENCHMARKS.md               Benchmark protocol and disclosure template
 PROMPT.md                   Initial prompt provenance and agent disclosure
-LAUNCH.md                   Hacker News launch copy and checklist
 .github/workflows/pages.yml GitHub Pages deployment
 .agents/skills              Local skills installed with `npx skills add`
 skills-lock.json            Installed skill lockfile
@@ -118,7 +117,7 @@ skills-lock.json            Installed skill lockfile
 ## Update Workflow
 
 1. Keep the static site dependency-free unless there is a strong reason to add tooling.
-2. Update docs when changing methodology, benchmark policy, or launch copy.
+2. Update docs when changing methodology or benchmark policy.
 3. For provider or benchmark changes, add public source links and disclose the agent/model used.
 4. Run a local preview:
 
@@ -166,12 +165,14 @@ Current LinkedIn contact URL:
 https://www.linkedin.com/in/yossi-eliaz
 ```
 
-If this is wrong, update it in `index.html`, `README.md`, and `LAUNCH.md`.
+If this is wrong, update it in `index.html` and `README.md`.
 
 ## Disclosure
 
 Keep the footer disclosure concise:
 
 ```text
-As of May 16, 2026, Yossi Eliaz is part of Incredibuild and was a founding member of Islo.dev.
+Yossi Eliaz is Principal Engineer, AI Systems at Incredibuild / islo.dev and was a founding member of Islo.dev. Islo is one of the providers listed on this page.
 ```
+
+Keep the matrix disclosure under "Workload to default contract." and keep vendors in each matrix cell in alphabetical order.

@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Sandbox Landscape</title>
+    <title>AI Sandbox Landscape · Yossi Eliaz</title>
     <meta
       name="description"
-      content="A technical public-info guide to choosing AI sandbox infrastructure by execution contract: permissions, isolation, reset, state, scale, secrets, evidence, and stop conditions."
+      content="Choose AI agent sandboxes by execution contract: isolation, reset, state, secrets, scale and evidence. Public-source map with links and cost signals."
     >
+    <meta name="author" content="Yossi Eliaz">
+    <link rel="canonical" href="https://zozo123.github.io/sandbox-landscape/">
     <meta property="og:title" content="AI Sandbox Landscape">
     <meta property="og:site_name" content="AI Sandbox Landscape">
     <meta property="og:url" content="https://zozo123.github.io/sandbox-landscape/">
@@ -16,9 +18,9 @@
       content="Choose the execution contract first: permissions, isolation, reset semantics, state, scale, secrets, evidence, and stop conditions."
     >
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
-    <meta property="og:image:url" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
-    <meta property="og:image:secure_url" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
+    <meta property="og:image" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
+    <meta property="og:image:url" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
+    <meta property="og:image:secure_url" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -29,14 +31,32 @@
       name="twitter:description"
       content="Choose the execution contract first: permissions, isolation, reset, state, scale, secrets, evidence, and stop conditions."
     >
-    <meta name="twitter:image" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
+    <meta name="twitter:image" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
     <meta name="twitter:image:alt" content="AI Sandbox Landscape: Choose the execution contract first.">
     <meta name="theme-color" content="#050605">
-    <meta name="image" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
-    <meta name="thumbnail" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
+    <meta name="image" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
+    <meta name="thumbnail" content="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="image_src" href="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20260516-2">
+    <link rel="image_src" href="https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "AI Sandbox Landscape: choose the execution contract first",
+        "description": "Public-source map of AI agent sandbox options by execution contract (isolation, reset, state, secrets, scale, evidence), AI-generated with Codex.",
+        "url": "https://zozo123.github.io/sandbox-landscape/",
+        "image": "https://zozo123.github.io/sandbox-landscape/og-image.png?v=20261022",
+        "datePublished": "2026-05-15",
+        "dateModified": "2026-05-16",
+        "author": {
+          "@type": "Person",
+          "name": "Yossi Eliaz",
+          "url": "https://yossieliaz.netlify.app/",
+          "sameAs": ["https://github.com/zozo123", "https://www.linkedin.com/in/yossi-eliaz/"]
+        }
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#use-cases">Skip to use cases</a>
@@ -72,7 +92,8 @@
               and what evidence comes back.
             </p>
             <div class="hero-meta" aria-label="Research scope">
-              <span>Updated May 16, 2026</span>
+              <span>By&nbsp;<a href="https://zozo123.github.io/">Yossi Eliaz</a></span>
+              <span>Snapshot: May 16, 2026</span>
               <span>Public sources only</span>
               <span>AI-generated baseline</span>
             </div>
@@ -300,6 +321,7 @@
         <div class="section-heading">
           <p class="kicker">Decision matrix</p>
           <h2 id="matrix-title">Workload to default contract.</h2>
+          <p class="disclosure">Disclosure: the author works at Incredibuild / islo.dev, one of the providers listed. Vendors in each cell are listed alphabetically.</p>
         </div>
 
         <div class="matrix-controls" aria-label="Matrix controls">
@@ -339,21 +361,21 @@
                 <td>Low</td>
                 <td>Medium</td>
                 <td>Medium</td>
-                <td>E2B / Modal / Anthropic / OpenAI / Gemini / AWS code tools</td>
+                <td>Anthropic / AWS / E2B / Gemini / Modal / OpenAI code tools</td>
               </tr>
               <tr data-tags="eval agent benchmark harbor modal daytona">
                 <td>Agent eval harness</td>
                 <td>No / medium</td>
                 <td>High</td>
                 <td>Medium / high</td>
-                <td>Harbor + Modal / Daytona</td>
+                <td>Harbor + Daytona / Modal</td>
               </tr>
               <tr data-tags="eval swe terminal bench">
                 <td>SWE-bench / Terminal-Bench</td>
                 <td>Medium</td>
                 <td>High</td>
                 <td>High</td>
-                <td>Harbor + Daytona / Modal / E2B</td>
+                <td>Harbor + Daytona / E2B / Modal</td>
               </tr>
               <tr data-tags="ci github actions">
                 <td>GitHub Actions ordinary CI</td>
@@ -374,42 +396,42 @@
                 <td>No / medium</td>
                 <td>Medium</td>
                 <td>High</td>
-                <td>ARC + Docker Sandboxes / Daytona / Crabbox</td>
+                <td>ARC + Crabbox / Daytona / Docker Sandboxes</td>
               </tr>
               <tr data-tags="long coding agent daytona runloop islo exe">
                 <td>Long-running coding agent</td>
                 <td>Yes</td>
                 <td>Medium</td>
                 <td>High</td>
-                <td>Daytona / Runloop / Islo / exe.dev</td>
+                <td>Daytona / exe.dev / Islo / Runloop</td>
               </tr>
               <tr data-tags="enterprise unattended agent islo runloop docker">
                 <td>Enterprise unattended agent</td>
                 <td>Yes</td>
                 <td>Medium</td>
                 <td>Very high</td>
-                <td>Islo / Runloop / Docker Sandboxes</td>
+                <td>Docker Sandboxes / Islo / Runloop</td>
               </tr>
               <tr data-tags="rl post training rollout modal harbor">
                 <td>Post-training RL rollouts</td>
                 <td>Usually no</td>
                 <td>Very high</td>
                 <td>Medium / high</td>
-                <td>Modal + Harbor</td>
+                <td>Harbor + Modal</td>
               </tr>
               <tr data-tags="enterprise production generated code sandbox egress secrets microvm">
                 <td>Production sandbox for generated code</td>
                 <td>No / bounded</td>
                 <td>Medium / high</td>
                 <td>Very high</td>
-                <td>Docker Sandboxes / Islo / Runloop / Daytona + approvals</td>
+                <td>Daytona / Docker Sandboxes / Islo / Runloop + approvals</td>
               </tr>
               <tr data-tags="rl stateful tensorlake daytona runloop fly sprites">
                 <td>Stateful RL environments</td>
                 <td>Yes</td>
                 <td>High</td>
                 <td>High</td>
-                <td>Tensorlake / Daytona / Runloop / Fly Sprites</td>
+                <td>Daytona / Fly Sprites / Runloop / Tensorlake</td>
               </tr>
               <tr data-tags="long auto healing temporal">
                 <td>Auto-healing agent workflow</td>
@@ -423,21 +445,21 @@
                 <td>Snapshot</td>
                 <td>Very high</td>
                 <td>Medium / high</td>
-                <td>Modal / Harbor / Daytona / Tensorlake / Crabbox</td>
+                <td>Crabbox / Daytona / Harbor / Modal / Tensorlake</td>
               </tr>
               <tr data-tags="long browser research e2b desktop daytona tensorlake">
                 <td>Browser / research agents</td>
                 <td>Medium</td>
                 <td>Medium</td>
                 <td>High</td>
-                <td>E2B Desktop / Daytona / Tensorlake / browser-specific sandbox</td>
+                <td>Daytona / E2B Desktop / Tensorlake / browser-specific sandbox</td>
               </tr>
               <tr data-tags="enterprise production adjacent approvals">
                 <td>Production-adjacent actions</td>
                 <td>Yes</td>
                 <td>Medium</td>
                 <td>Very high</td>
-                <td>Islo / Runloop / Docker Sandboxes + approvals</td>
+                <td>Docker Sandboxes / Islo / Runloop + approvals</td>
               </tr>
             </tbody>
           </table>
@@ -497,15 +519,15 @@
                 <span class="vendor-mark">CS</span>
                 <span class="vendor-text"><strong>ComputeSDK</strong><small>One API over sandbox providers</small></span>
               </a>
-              <a class="vendor-item" href="https://www.computesdk.com/providers/vercel/" target="_blank" rel="noreferrer">
+              <a class="vendor-item" href="https://vercel.com/docs/vercel-sandbox" target="_blank" rel="noreferrer">
                 <span class="vendor-mark">V</span>
                 <span class="vendor-text"><strong>Vercel Sandbox</strong><small>Web-oriented AI code execution</small></span>
               </a>
-              <a class="vendor-item" href="https://www.computesdk.com/providers/namespace/" target="_blank" rel="noreferrer">
+              <a class="vendor-item" href="https://namespace.so/" target="_blank" rel="noreferrer">
                 <span class="vendor-mark">N</span>
                 <span class="vendor-text"><strong>Namespace</strong><small>Ephemeral container instances</small></span>
               </a>
-              <a class="vendor-item" href="https://www.computesdk.com/providers/blaxel/" target="_blank" rel="noreferrer">
+              <a class="vendor-item" href="https://blaxel.ai/" target="_blank" rel="noreferrer">
                 <span class="vendor-mark">B</span>
                 <span class="vendor-text"><strong>Blaxel</strong><small>Serverless AI compute</small></span>
               </a>
@@ -657,11 +679,11 @@
                 <span class="vendor-mark">No</span>
                 <span class="vendor-text"><strong>Noid</strong><small>Agent runtime candidate</small></span>
               </a>
-              <a class="vendor-item" href="https://www.computesdk.com/providers/hopx/" target="_blank" rel="noreferrer">
+              <a class="vendor-item" href="https://hopx.ai/" target="_blank" rel="noreferrer">
                 <span class="vendor-mark">Hx</span>
                 <span class="vendor-text"><strong>Hopx</strong><small>MicroVM sandbox provider</small></span>
               </a>
-              <a class="vendor-item" href="https://www.computesdk.com/providers/codesandbox/" target="_blank" rel="noreferrer">
+              <a class="vendor-item" href="https://codesandbox.io/" target="_blank" rel="noreferrer">
                 <span class="vendor-mark">CSB</span>
                 <span class="vendor-text"><strong>CodeSandbox</strong><small>Cloud development sandboxes</small></span>
               </a>
@@ -781,7 +803,6 @@
           <a href="https://officialskills.sh/" target="_blank" rel="noreferrer">officialskills.sh</a>
           <a href="PROMPT.md">Prompt provenance</a>
           <a href="AGENTS.md">Agent instructions</a>
-          <a href="LAUNCH.md">Launch notes</a>
         </div>
       </section>
 
@@ -799,7 +820,8 @@
       <p>AI Sandbox Landscape. Public-info baseline. Verify before production use.</p>
       <p>Seeded with Codex on May 15, 2026. Public repo: <a href="https://github.com/zozo123/sandbox-landscape">github.com/zozo123/sandbox-landscape</a>.</p>
       <p>External references: <a href="https://www.computesdk.com/benchmarks/" target="_blank" rel="noreferrer">ComputeSDK sandbox benchmarks</a> and <a href="https://officialskills.sh/" target="_blank" rel="noreferrer">officialskills.sh</a>.</p>
-      <p>Disclosure: As of May 16, 2026, Yossi Eliaz is part of <a href="https://www.incredibuild.com/" target="_blank" rel="noreferrer">Incredibuild</a> and was a founding member of <a href="https://islo.dev/" target="_blank" rel="noreferrer">Islo.dev</a>.</p>
+      <p>Disclosure: <a href="https://yossieliaz.netlify.app/">Yossi Eliaz</a> is Principal Engineer, AI Systems at <a href="https://www.incredibuild.com/" target="_blank" rel="noreferrer">Incredibuild</a> / <a href="https://islo.dev/" target="_blank" rel="noreferrer">islo.dev</a> and was a founding member of Islo.dev. Islo is one of the providers listed on this page.</p>
+      <p>More writing: <a href="https://zozo123.github.io/">zozo123.github.io</a></p>
     </footer>
 
     <script src="script.js"></script>

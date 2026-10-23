@@ -1,6 +1,6 @@
 # AI Sandbox Landscape
 
-A living static website for mapping AI agent sandbox choices across evals, GitHub Actions, post-training/RL rollouts, generated-code execution, long-running coding agents, auto-healing workflows, and production-adjacent automation.
+A static snapshot (May 16, 2026), AI-generated with Codex from public sources, mapping AI agent sandbox choices across evals, GitHub Actions, post-training/RL rollouts, generated-code execution, long-running coding agents, auto-healing workflows, and production-adjacent automation. Live page: [zozo123.github.io/sandbox-landscape](https://zozo123.github.io/sandbox-landscape/). By [Yossi Eliaz](https://zozo123.github.io/).
 
 The central claim:
 
@@ -48,7 +48,6 @@ DESIGN.md                  Visual philosophy and accessibility notes
 BENCHMARKS.md              Benchmark methodology and disclosure template
 PROMPT.md                  Prompt provenance and agent disclosure
 AGENTS.md                  Compact operating brief for future coding agents
-LAUNCH.md                  Hacker News copy and launch checklist
 .github/workflows/pages.yml GitHub Pages deployment workflow
 ```
 
@@ -75,9 +74,11 @@ The website includes official links and public cost signals for the products, do
 
 Cost notes are snapshots from public pricing pages. Recheck pricing before using the site for vendor selection or benchmarks.
 
+Disclosure: the author works at Incredibuild / islo.dev, one of the providers listed. Vendors in each matrix cell are listed alphabetically.
+
 The page also links to [officialskills.sh](https://officialskills.sh/) as an adjacent agent-skills registry. This repo is focused on execution boundaries and sandbox infrastructure, not skill packaging.
 
-The repo includes local `.agents/skills` installs for accessibility, canvas-design, and algorithmic-art so future agents can keep UI work constrained to accessibility, visual clarity, and deterministic generative graphics.
+The repo vendors agent skills from [addyosmani/web-quality-skills](https://github.com/addyosmani/web-quality-skills) (accessibility) and [anthropics/skills](https://github.com/anthropics/skills) (canvas-design, algorithmic-art) under `.agents/skills`, so future agents can keep UI work constrained to accessibility, visual clarity, and deterministic generative graphics.
 
 ## GitHub Pages
 
@@ -96,10 +97,6 @@ Expected public URL after deployment:
 ```text
 https://zozo123.github.io/sandbox-landscape/
 ```
-
-## Hacker News Launch
-
-The Hacker News title, submit link, first comment, and checklist live in [LAUNCH.md](LAUNCH.md).
 
 ## Feedback
 
